@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget commonTextWidget(
     {required String text,
-      double? fontsize,
+      double? fontSize,
       FontWeight? fontWeight,
       Color? color,
       String? fontFamily,
@@ -14,7 +14,7 @@ Widget commonTextWidget(
   return Text(
     text,
     style: TextStyle(
-      fontSize: fontsize,
+      fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,
       fontFamily: fontFamily,

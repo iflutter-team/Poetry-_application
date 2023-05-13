@@ -8,26 +8,29 @@ class StringRes{
   ///--------------loginScreen-------------------------///
   static const loginString = "Login";
   static const forgetPassString = "Forget password";
+  static const emailString = "Email";
+  static const passWordString = "Password";
+  static const doNotHaveAccountText = "Don’t  have an account?";
 
   ///--------------signUpScreen----------------------///
   static const signUpString = "Sign Up";
+
+
   static const agreedString = "Agreed To";
-  static const fullnameString = "Full Name";
-  static const passswordString = "Password";
-  static const emailString = "Email";
-  static const confirmpassswordString = "Confirm password";
-  static const TermsAndConditionString = "Terms & Conditions";
-  static const dontHaveAccountText = "Don’t  have an account?";
-  static const homepageappbar = "Poetry";
-  static const Popularategories = "Popular Categories";
-  static const viewall = "View All";
-  static const MunawwarRana="Munawwar Rana";
-  static const AhmadMushtaq="Ahmad Mushtaq";
-  static const kaifiazmi="kaifi azmi";
-  static const Poetry="Poetry";
+  static const fullNameString = "Full Name";
+  static const confirmPassWordString = "Confirm password";
+  static const termsAndConditionString = "Terms & Conditions";
+
+  static const homePageAppbar = "Poetry";
+  static const popularCategories = "Popular Categories";
+  static const vieWall = "View All";
+  static const muNawWarRana="Munawwar Rana";
+  static const ahmadMuShTaq="Ahmad Mushtaq";
+  static const kaiFiaZmi="Kaifi azmi";
+  static const poetry="Poetry";
   static const topLovePoems="Top Love Poems";
-  static const topfriendshippoems="Top Friendship Poems";
-  static const famousbook="Famous Book";
+  static const topFriendshipPoems="Top Friendship Poems";
+  static const famousBook="Famous Book";
 
 
 }

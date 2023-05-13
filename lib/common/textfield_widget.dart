@@ -4,8 +4,10 @@ import 'package:dotted_border/dotted_border.dart';
 Widget commonTextField(
     {required double width,
       required double height,
-      required TextEditingController controlller,
+      required TextEditingController controller,
       required String? Function(dynamic val) validator,
+      required bool obscureText,
+      Widget? suffixIcon,
       required String hintTextString}) {
   return SizedBox(
     width: width,
@@ -19,11 +21,14 @@ Widget commonTextField(
       radius: const Radius.circular(10),
       child: TextFormField(
         validator: validator,
-        controller: controlller,
+        controller: controller,
         decoration: InputDecoration(
             hintStyle: const TextStyle(color: Colors.white),
             hintText: hintTextString,
-            border: InputBorder.none),
+            border: InputBorder.none,
+          suffixIcon:suffixIcon,
+        ),
+        obscureText:obscureText ,
         style: const TextStyle(color: Colors.white),
       ),
     ),

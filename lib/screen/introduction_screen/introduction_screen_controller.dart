@@ -8,6 +8,7 @@ class IntroductionScreenController extends GetxController {
   PageController pageController = PageController();
 
   void introductionPageBottomButton() {
+    update(['container']);
     if (pageIndex != 2) {
       pageController.nextPage(
           duration: const Duration(seconds: 1), curve: Curves.ease);
@@ -16,11 +17,9 @@ class IntroductionScreenController extends GetxController {
     }
   }
 
-  void pageViewOfIntroductionScreen(){
-        (int value) {
-          pageIndex = value;
-          update()
+  void pageViewOfIntroductionScreen(int value){
+    update(['pageView','indicator','container']);
+    pageIndex = value;
 
-    };
   }
 }

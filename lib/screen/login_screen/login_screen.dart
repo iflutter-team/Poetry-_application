@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poetry/common/paddingwidget.dart';
-import 'package:poetry/common/textfieldwidget.dart';
-import 'package:poetry/common/textwidget.dart';
+import 'package:poetry/common/padding_widget.dart';
+import 'package:poetry/common/sizedbox_widget.dart';
+import 'package:poetry/common/text_widget.dart';
 import 'package:poetry/screen/login_screen/login_screen_controller.dart';
 import 'package:poetry/screen/login_screen/login_screen_widget.dart';
 import 'package:poetry/utils/color_res.dart';
-
-import '../../common/backarrowwidget.dart';
 import '../../utils/string_res.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -30,27 +28,42 @@ class _LoginScreenState extends State<LoginScreen> {
         left: w * 0.015,
         right: w * 0.015,
         top: h * 0.050,
-        widget: Container(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              Row(
-                children: [backArrow()],
-              ),
-              SizedBox(
-                height: h * 0.0304,
-              ),
-              loginPageImage(height: h*0.260),
-              SizedBox(
-                height: h * 0.0304,
-              ),
-              commonTextWidget(
-                  text: StringRes.loginString, fontsize: 18, color: Colors.white),
-              SizedBox(
-                height: h * 0.0299,
-              ),
-              textFieldWidget(),
-            ],
+        widget: SingleChildScrollView(
+          child: Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: [
+                Row(
+                  children: [arrow()],
+                ),
+                sizedBoxWidget(
+                  height: h * 0.0304,
+                ),
+                loginPageImage(height: h * 0.260),
+                sizedBoxWidget(
+                  height: h * 0.0304,
+                ),
+                commonTextWidget(
+                    text: StringRes.loginString,
+                    fontSize: 18,
+                    color: Colors.white),
+                sizedBoxWidget(
+                  height: h * 0.0299,
+                ),
+                emailTextFieldWidget(),
+                sizedBoxWidget(height: h * 0.0299),
+                passTextFieldWidget(),
+                forgetPassWordButton(),
+                sizedBoxWidget(
+                  height: h * 0.116,
+                ),
+                loginButton(),
+                sizedBoxWidget(
+                  height: h * 0.020,
+                ),
+                account(),
+              ],
+            ),
           ),
         ),
       ),

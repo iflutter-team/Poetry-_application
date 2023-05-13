@@ -13,3 +13,4 @@ class AssetRes{
         static const loginScreenImg="${imageBase}loginScreen.png";
 
 }
+
