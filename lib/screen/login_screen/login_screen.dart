@@ -6,6 +6,7 @@ import 'package:poetry/common/text_widget.dart';
 import 'package:poetry/screen/login_screen/login_screen_controller.dart';
 import 'package:poetry/screen/login_screen/login_screen_widget.dart';
 import 'package:poetry/utils/color_res.dart';
+import '../../common/poetry_image.dart';
 import '../../utils/string_res.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -28,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
         left: w * 0.015,
         right: w * 0.015,
         top: h * 0.050,
+        bottom: h*0.0,
         widget: SingleChildScrollView(
           child: Container(
             alignment: Alignment.center,
@@ -39,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 sizedBoxWidget(
                   height: h * 0.0304,
                 ),
-                loginPageImage(height: h * 0.260),
+                poetryPageImage(height: h * 0.260),
                 sizedBoxWidget(
                   height: h * 0.0304,
                 ),

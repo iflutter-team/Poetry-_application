@@ -9,6 +9,7 @@ Widget commonTextWidget(
       FontStyle? fontStyle,
       TextDecoration? decoration,
       TextAlign? textAlign,
+      double? height,
     }
     ) {
   return Text(
@@ -20,7 +21,7 @@ Widget commonTextWidget(
       fontFamily: fontFamily,
       fontStyle: fontStyle,
       decoration: decoration,
-
+      height:height,
     ),
     textAlign: textAlign,
   );

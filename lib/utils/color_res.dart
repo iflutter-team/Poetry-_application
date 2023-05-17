@@ -10,5 +10,5 @@ class ColorRes{
 
   ///------------------homeScreen--------------------------///
   static const switchInactiveColor=Colors.black38;
-  //static const gridViweColor=Colors.white70;
+  static const gridViewColor=Colors.white70;
 }

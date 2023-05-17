@@ -5,7 +5,6 @@ import 'package:poetry/common/icon_widget.dart';
 import 'package:poetry/common/login_signup_button.dart';
 import 'package:poetry/common/textfield_widget.dart';
 import 'package:poetry/screen/login_screen/login_screen_controller.dart';
-import 'package:poetry/utils/asset_res.dart';
 import 'package:poetry/utils/color_res.dart';
 import '../../common/text_widget.dart';
 import '../../utils/icon_res.dart';
@@ -19,13 +18,6 @@ Widget arrow() {
   );
 }
 
-Widget loginPageImage({double? height, double? width}) {
-  return Image.asset(
-    AssetRes.loginScreenImg,
-    height: height,
-    width: width,
-  );
-}
 
 Widget emailTextFieldWidget() {
   double h = Get.height;

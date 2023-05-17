@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:poetry/screen/home_screen/home_screen_controller.dart';
+import 'package:poetry/utils/color_res.dart';
+
+import 'home_screen_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,6 +15,31 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    Get.put(HomeScreenController());
+    return Scaffold(
+      backgroundColor: ColorRes.greenColor,
+      appBar: appBarWidget(),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                carouselSliderWidget(),
+                pageView(),
+                rowWidget(),
+                popularCategoriesList(context),
+                rowTwoWidget(),
+                topPoetsList(context),
+                rowThreeWidget(),
+                famousBookList(context),
+              ],
+            ),
+          ),
+          containerCondition(),
+          animatedContainer(context),
+        ],
+      ),
+    );
   }
 }
