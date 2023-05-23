@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:poetry/common/animatedcontainerwidget.dart';
 import 'package:poetry/common/sizedbox_widget.dart';
 
+import '../../common/common_container.dart';
 import '../../common/text_widget.dart';
 import '../../utils/string_res.dart';
 import '../login_screen/login_screen.dart';
@@ -75,18 +76,17 @@ Widget introductionPageBottomButton(
   return InkWell(
     overlayColor: const MaterialStatePropertyAll(Colors.transparent),
     onTap: onTapDuration,
-    child: Container(
+    child: commonContainer(
       height: 50,
       width: double.infinity,
       alignment: Alignment.center,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25), color: Colors.white),
-      child: Text(
-        text,
-        style: const TextStyle(
-            color: Color(0xff0F3E1A),
+      child: commonTextWidget(
+        text: text,
+            color: const Color(0xff0F3E1A),
             fontSize: 18,
-            fontWeight: FontWeight.w800),
+            fontWeight: FontWeight.w800,
       ),
     ),
   );
@@ -127,7 +127,7 @@ Widget row(){
             const Spacer(),
             TextButton(
               onPressed: () {
-                Get.to(const LoginScreen());
+                Get.to(LoginScreen());
               },
               child: commonTextWidget(
                   text: StringRes.introductionPageSkipButton,

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:poetry/screen/famousbook_screen/famousbook_screen.dart';
 import 'package:poetry/screen/view_screen/view_screen.dart';
 
 import '../../utils/asset_res.dart';
@@ -19,7 +20,7 @@ class HomeScreenController extends GetxController {
 
   void menuContainer() {
     selected = !selected;
-    update(['menu']);
+    update(['animatedContainer']);
   }
 
   List carouselSliderdList = [
@@ -34,7 +35,11 @@ class HomeScreenController extends GetxController {
   }
 
   void viewAllCondition(){
-    Get.to(const ViewSceeen());
+    Get.to(const ViewScreen());
+  }
+
+  void famousBookCondition(){
+    Get.to(const FamousBook());
   }
 
   void gestureDetectorCondition(){

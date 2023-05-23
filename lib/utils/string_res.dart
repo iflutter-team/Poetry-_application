@@ -103,14 +103,68 @@ class StringRes{
       'title': "Time is Mother",
     },
   ];
+
   static const topPoets = "Top Poets";
   static const muNawWarRana="Munawwar Rana";
   static const ahmadMuShtaq="Ahmad Mushtaq";
   static const kaiFiaZmi="Kaifi azmi";
+
+  ///----------------------------famousBookScreen------------------------------///
+  static List<Map> famousBookData = [
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'Book': 'Book',
+      'Author': 'Author',
+      'Pubilshed': 'Pubilshed',
+      'name': 'Time is Mother',
+      'authername': 'Ocean Vuong',
+      'PubilshedDate': 'April 5,2022'
+    },
+    {
+      'image': AssetRes.summaryImage,
+      'Book': 'Book',
+      'Author': 'Author',
+      'Pubilshed': 'Pubilshed',
+      'name': 'Summary and\nAnalysis',
+      'authername': 'Ocean Vuong',
+      'PubilshedDate': 'April 8,2022'
+    },
+    {
+      'image': AssetRes.pabloNerudaImage,
+      'Book': 'Book',
+      'Author': 'Author',
+      'Pubilshed': 'Pubilshed',
+      'name': 'The Poetry of\nPablo Neruda',
+      'authername': 'Pablo Neruda',
+      'PubilshedDate': 'Dec. 1, 1951'
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'Book': 'Book',
+      'Author': 'Author',
+      'Pubilshed': 'Pubilshed',
+      'name': 'Time is Mother',
+      'authername': 'Ocean Vuong',
+      'PubilshedDate': 'April 5,2022'
+    },
+  ];
+
+  static const famousBook="Famous Book";
+
+ ///---------------------------viewScreen--------------------------------------///
   static const poetry="Poetry";
   static const topLovePoems="Top Love Poems";
   static const topFriendshipPoems="Top Friendship Poems";
-  static const famousBook="Famous Book";
+
+  ///---------------------------timeIsMotherScreen-----------------------------///
+  static const timeIsMother="Time is Mother";
+  static const book="Book";
+  static const author="Author";
+  static const authorString="Ocean Vuong";
+  static const pubilshed="Pubilshed";
+  static const pubilshedString="April 5,2022";
+
+
 
 
 }

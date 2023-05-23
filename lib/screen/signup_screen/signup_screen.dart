@@ -10,16 +10,14 @@ import '../../common/sizedbox_widget.dart';
 import '../../common/text_widget.dart';
 import '../../utils/string_res.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class SignUpScreen extends StatelessWidget {
+   SignUpScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
   double h=Get.height;
+
   double w=Get.width;
+
   @override
   Widget build(BuildContext context) {
     Get.put(SignUpController());

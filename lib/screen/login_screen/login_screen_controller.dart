@@ -34,10 +34,10 @@ class LoginController extends GetxController {
     Get.to(const ForGetPassWord());
   }
   void loginButton(){
-    Get.to(const HomeScreen());
+    Get.offAll(const HomeScreen());
   }
   void account(){
-    Get.to(const SignUpScreen());
+    Get.to( SignUpScreen());
   }
   void backArrow(){
     Get.back();

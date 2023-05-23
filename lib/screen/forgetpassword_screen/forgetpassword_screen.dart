@@ -10,14 +10,9 @@ import '../../utils/string_res.dart';
 import 'forgetpassword_screen_controller.dart';
 import 'forgetpassword_screen_widget.dart';
 
-class ForGetPassWord extends StatefulWidget {
+class ForGetPassWord extends StatelessWidget {
   const ForGetPassWord({Key? key}) : super(key: key);
 
-  @override
-  State<ForGetPassWord> createState() => _ForGetPassWordState();
-}
-
-class _ForGetPassWordState extends State<ForGetPassWord> {
   @override
   Widget build(BuildContext context) {
     Get.put(ForGetController());

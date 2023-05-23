@@ -4,7 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
-import 'package:poetry/common/commom_row.dart';
+import 'package:poetry/common/common_container.dart';
+import 'package:poetry/common/common_row.dart';
 import 'package:poetry/common/padding_widget.dart';
 import 'package:poetry/common/sizedbox_widget.dart';
 import 'package:poetry/common/text_widget.dart';
@@ -25,7 +26,7 @@ AppBar appBarWidget() {
     backgroundColor: ColorRes.whiteColor,
     leadingWidth: w * 0.13,
     leading: GetBuilder<HomeScreenController>(
-        id: 'menu',
+        id: 'animatedContainer',
         builder: (controller) {
           return InkWell(
             onTap: controller.menuContainer,
@@ -141,7 +142,7 @@ Widget popularCategoriesList(BuildContext context,) {
             children: [
               Padding(
                 padding: const EdgeInsets.all(5.0),
-                child: Container(
+                child: commonContainer(
                   height: h * 0.320,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -161,7 +162,7 @@ Widget popularCategoriesList(BuildContext context,) {
                       right: w * 0.0,
                       top: h * 0.25,
                       bottom: h * 0.0,
-                      widget: Container(
+                      widget: commonContainer(
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
@@ -263,8 +264,8 @@ Widget rowThreeWidget() {
     return commonRow(
         text: StringRes.famousBook,
         width: w * 0.48,
-        onPressed: () {},
-        onPressedView: () {});
+        onPressed:controller.famousBookCondition, onPressedView: () {  },
+        );
   });
 }
 
@@ -335,7 +336,9 @@ Widget famousBookList(BuildContext context,) {
 }
 
 Widget containerCondition() {
-  return GetBuilder<HomeScreenController>(builder: (controller) {
+  return GetBuilder<HomeScreenController>(
+      id: "animatedContainer",
+      builder: (controller) {
     return GestureDetector(
       onTap: controller.gestureDetectorCondition,
       child: controller.selected

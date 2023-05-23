@@ -11,4 +11,10 @@ class ColorRes{
   ///------------------homeScreen--------------------------///
   static const switchInactiveColor=Colors.black38;
   static const gridViewColor=Colors.white70;
+
+  ///------------------famousBookScreen--------------------///
+  static const famousBookColor=Colors.white70;
+
+  ///------------------timeIsMotherBook-------------------///
+  static const timeIsMotherBookColor=Colors.black87;
 }

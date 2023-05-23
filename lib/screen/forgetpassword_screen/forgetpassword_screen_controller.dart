@@ -35,7 +35,7 @@ class ForGetController extends GetxController {
     update(['forGetNewPassword']);
   }
   void confirmButton() {
-    Get.to( const LoginScreen());
+    Get.to( LoginScreen());
   }
 
   void forGetBackArrow() {

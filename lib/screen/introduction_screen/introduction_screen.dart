@@ -6,14 +6,9 @@ import 'package:poetry/screen/introduction_screen/introduction_screen_controller
 import '../../utils/color_res.dart';
 import 'introduction_screen_widget.dart';
 
-class IntroductionScreen extends StatefulWidget {
+class IntroductionScreen extends StatelessWidget {
   const IntroductionScreen({Key? key}) : super(key: key);
 
-  @override
-  State<IntroductionScreen> createState() => _IntroductionScreenState();
-}
-
-class _IntroductionScreenState extends State<IntroductionScreen> {
   @override
   Widget build(BuildContext context) {
     Get.put(IntroductionScreenController());

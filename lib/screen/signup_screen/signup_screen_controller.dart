@@ -6,7 +6,7 @@ import 'package:poetry/common/text_widget.dart';
 import 'package:poetry/screen/home_screen/home_screen.dart';
 import 'package:poetry/utils/color_res.dart';
 
-import '../../common/icon_widget.dart';
+import '../../common/iconbutton_widget.dart';
 import '../../common/sizedbox_widget.dart';
 import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
@@ -45,7 +45,7 @@ class SignUpController extends GetxController {
   }
 
   void signupButton() {
-    Get.to(const LoginScreen());
+    Get.to(LoginScreen());
   }
 
   String? termsAndCondition(agreedToChecked) {

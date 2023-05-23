@@ -9,15 +9,12 @@ import 'package:poetry/utils/color_res.dart';
 import '../../common/poetry_image.dart';
 import '../../utils/string_res.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class LoginScreen extends StatelessWidget {
+   LoginScreen({Key? key}) : super(key: key);
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   double h = Get.height;
+
   double w = Get.width;
 
   @override

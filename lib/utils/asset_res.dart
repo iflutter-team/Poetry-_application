@@ -31,6 +31,21 @@ class AssetRes{
         static const  waitingOrGodotImage= "${imageBase}waitingorgodot.png";
         static const  aThousandMorningsImage= "${imageBase}athousandmornings.png";
         static const  timeIsMotherImage= "${imageBase}timeismother.png";
+        static const  saveImage= "${imageBase}save.png";
+        static const  lineImage= "${imageBase}Line.png";
+        static const  favoriteImage= "${imageBase}favorite.png";
+        static const  shareImage= "${imageBase}share.png";
+        static const  summaryImage= "${imageBase}summary.png";
+        static const  pabloNerudaImage= "${imageBase}pabloneruda.png";
+        static const  poemImage= "${imageBase}poem.png";
+        static const  line4Image= "${imageBase}Line4.png";
+        static const  editImage= "${imageBase}edit.png";
+        static const  textImage= "${imageBase}text.png";
+        static const  copyImage= "${imageBase}copy.png";
+        static const  pasteImage= "${imageBase}paste.png";
+        static const  share2Image= "${imageBase}share2.png";
+
+
 
 }
 

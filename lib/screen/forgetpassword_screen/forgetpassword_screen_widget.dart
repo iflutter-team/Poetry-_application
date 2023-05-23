@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/back_arrow_widget.dart';
-import 'package:poetry/common/icon_widget.dart';
+import 'package:poetry/common/iconbutton_widget.dart';
 import 'package:poetry/common/login_signup_button.dart';
 import 'package:poetry/common/textfield_widget.dart';
 import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen_controller.dart';
