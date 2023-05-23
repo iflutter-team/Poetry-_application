@@ -53,7 +53,7 @@ AppBar appBarWidget() {
           builder: (controller) => FlutterSwitch(
                 toggleSize: 20,
                 height: h * 0.0350,
-                width: w * 0.1172,
+                width: w * 0.1072,
                 activeColor: ColorRes.greenColor,
                 inactiveColor: ColorRes.switchInactiveColor,
                 value: controller.switchDemo,
@@ -118,11 +118,13 @@ Widget rowWidget() {
         text: StringRes.popularCategories,
         width: w * 0.38,
         onPressed: () {},
-        onPressedView:controller.viewAllCondition);
+        onPressedView: controller.viewAllCondition);
   });
 }
 
-Widget popularCategoriesList(BuildContext context,) {
+Widget popularCategoriesList(
+  BuildContext context,
+) {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
@@ -269,7 +271,9 @@ Widget rowThreeWidget() {
   });
 }
 
-Widget famousBookList(BuildContext context,) {
+Widget famousBookList(
+  BuildContext context,
+) {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen.dart';
-import 'package:poetry/screen/home_screen/home_screen.dart';
 import 'package:poetry/screen/signup_screen/signup_screen.dart';
+
+import '../bottom_navbar_screen/bottom_navbar_screen.dart';
 
 class LoginController extends GetxController {
   bool visiBal = true;
@@ -16,7 +17,7 @@ class LoginController extends GetxController {
   }
 
   String? passWordCondition(val) {
-   // update(['password']);
+    // update(['password']);
     bool passValid =
         RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)").hasMatch(val!);
     return passValid

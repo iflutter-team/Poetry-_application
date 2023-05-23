@@ -166,5 +166,9 @@ class StringRes{
 
 
 
-
+  ///--------------bottomNavScreen----------------------///
+  static const homeText = "Home";
+  static const bookmarkText = "Bookmark";
+  static const notificationText = "Notification";
+  static const profileText = "Profile";
 }
