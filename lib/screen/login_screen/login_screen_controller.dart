@@ -4,10 +4,6 @@ import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen.dart';
 import 'package:poetry/screen/signup_screen/signup_screen.dart';
 
 import '../bottom_navbar_screen/bottom_navbar_screen.dart';
-<<<<<<< Updated upstream
-=======
-import '../home_screen/home_screen.dart';
->>>>>>> Stashed changes
 
 class LoginController extends GetxController {
   GlobalKey<FormState> loginKey = GlobalKey<FormState>();
