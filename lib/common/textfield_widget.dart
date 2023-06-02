@@ -5,7 +5,7 @@ Widget commonTextField(
     {required double width,
       required double height,
       required TextEditingController controller,
-      required String? Function(dynamic val) validator,
+       String? Function(dynamic val)? validator,
       required bool obscureText,
       Widget? suffixIcon,
       required String hintTextString}) {

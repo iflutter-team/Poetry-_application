@@ -166,9 +166,19 @@ class StringRes{
 
 
 
-  ///--------------bottomNavScreen----------------------///
+  ///---------------------------bottomNavScreen--------------------------------///
   static const homeText = "Home";
   static const bookmarkText = "Bookmark";
   static const notificationText = "Notification";
   static const profileText = "Profile";
+
+  ///----------------------------addPoemScreen---------------------------------///
+  static const addPoem="Add Poem";
+  static const categories="Categories";
+  static const title="Title";
+
+  ///----------------------------notificationScreen----------------------------///\
+  static const notification="Notification";
+
+
 }

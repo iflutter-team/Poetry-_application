@@ -11,5 +11,7 @@ class IconRes{
   static const translateIcon=  Icons.g_translate_sharp;
   static const warningIcon=  Icons.warning_amber;
   static const logoutIcon=   Icons.logout;
+  static const favoriteIcon=   Icons.favorite;
+  static const backArrowIcon=   Icons.arrow_back_sharp;
 
 }

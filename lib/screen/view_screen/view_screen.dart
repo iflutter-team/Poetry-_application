@@ -5,6 +5,7 @@ import '../../common/common_appbar.dart';
 import '../../common/sizedbox_widget.dart';
 import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
+import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
 
 class ViewScreen extends StatelessWidget {
@@ -20,8 +21,8 @@ class ViewScreen extends StatelessWidget {
         backgroundColor: ColorRes.whiteColor,
         context,
         title: StringRes.poetry,
-        leadingIcon: Icons.arrow_back_sharp,
-        actionIcon: Icons.favorite,
+        leadingIcon: IconRes.backArrowIcon,
+        actionIcon: IconRes.favoriteIcon,
       ),
       body: Center(
         child: Column(

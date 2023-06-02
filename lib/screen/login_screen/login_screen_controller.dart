@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen.dart';
 import 'package:poetry/screen/signup_screen/signup_screen.dart';
 
-import '../bottom_navbar_screen/bottom_navbar_screen.dart';
+import '../home_screen/home_screen.dart';
 
 class LoginController extends GetxController {
   bool visiBal = true;

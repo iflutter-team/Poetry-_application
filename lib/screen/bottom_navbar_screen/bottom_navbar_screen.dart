@@ -18,7 +18,7 @@ class _BottomNavBarSrceenState extends State<BottomNavBarSrceen> {
     Get.put(BottomNavBarController());
     return Scaffold(
       backgroundColor: ColorRes.greenColor,
-      body: bottomnavbar(),
+      body: bottomNavBar(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../common/common_appbar.dart';
 import '../../utils/color_res.dart';
+import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
 
 class PoemScreen extends StatelessWidget {
@@ -15,11 +16,11 @@ class PoemScreen extends StatelessWidget {
         backgroundColor: ColorRes.whiteColor,
         context,
         title: StringRes.famousBook,
-        leadingIcon: Icons.arrow_back_sharp,
-        actionIcon: Icons.favorite,
+        leadingIcon: IconRes.backArrowIcon,
+        actionIcon: IconRes.favoriteIcon,
       ),
       body: Column(
-        children: [
+        children: const [
 
         ],
       ),

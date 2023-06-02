@@ -4,6 +4,7 @@ import 'package:poetry/screen/famousbook_screen/famousbook_screen_controller.dar
 import 'package:poetry/utils/color_res.dart';
 
 import '../../common/common_appbar.dart';
+import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
 import 'famousbook_screen_widget.dart';
 
@@ -20,8 +21,8 @@ class FamousBook extends StatelessWidget {
         backgroundColor: ColorRes.whiteColor,
         context,
         title: StringRes.famousBook,
-        leadingIcon: Icons.arrow_back_sharp,
-        actionIcon: Icons.favorite,
+        leadingIcon: IconRes.backArrowIcon,
+        actionIcon: IconRes.favoriteIcon,
       ),
       body: Column(
         children: [

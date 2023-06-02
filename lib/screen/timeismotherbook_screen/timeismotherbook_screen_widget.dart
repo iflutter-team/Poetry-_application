@@ -182,7 +182,6 @@ Widget containerWidget() {
 
 Widget bottomNavigationBarWidget(){
   double h=Get.height;
-  double w=Get.width;
   return GetBuilder<TimeIsMotherController>(
     builder: (controller) {
       return commonContainer(

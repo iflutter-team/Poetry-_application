@@ -44,6 +44,14 @@ class AssetRes {
   static const copyImage = "${imageBase}copy.png";
   static const pasteImage = "${imageBase}paste.png";
   static const share2Image = "${imageBase}share2.png";
-}
+
   ///----------------------bottom NavBar Screen------------------------------------///
   static const bottomNavBarCenterFeatherImage = "${imageBase}feather.png";
+
+  ///----------------------addPoemScreen---------------------------------------///
+  static const downloadImage="${imageBase}download.png";
+
+  ///-----------------------notificationScreen----------------------------------///
+  static const notificationImage="${imageBase}notification.png";
+
+}
