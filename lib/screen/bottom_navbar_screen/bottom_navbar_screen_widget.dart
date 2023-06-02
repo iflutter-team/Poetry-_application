@@ -1,9 +1,10 @@
-
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/iconbutton_widget.dart';
 import 'package:poetry/common/text_widget.dart';
+import 'package:poetry/utils/asset_res.dart';
+
 import 'package:poetry/utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
@@ -155,7 +156,7 @@ Widget bottomNavBar() {
   });
 }
 
-class CustomPainterWidget extends CustomPainter {
+class custompainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
@@ -165,7 +166,7 @@ class CustomPainterWidget extends CustomPainter {
     path.quadraticBezierTo(size.width * 0.20, 0, size.width * 0.35, 0);
     path.quadraticBezierTo(size.width * 0.40, 0, size.width * 0.40, 20);
     path.arcToPoint(Offset(size.width * 0.60, 20),
-        radius: const Radius.circular(10), clockwise: false);
+        radius: Radius.circular(10), clockwise: false);
     path.quadraticBezierTo(size.width * 0.60, 0, size.width * 0.65, 0);
     path.quadraticBezierTo(size.width * 0.80, 0, size.width, 0);
     path.lineTo(size.width, size.height);

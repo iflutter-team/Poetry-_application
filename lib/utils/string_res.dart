@@ -69,20 +69,16 @@ class StringRes{
     },
   ];
 
-  static List<Map> topPoetsList=[
+  static List<Map> topPoetsList = [
     {
-      'image':AssetRes.munawwarRanaImage,
-      'title':StringRes.muNawWarRana,
+      'image': AssetRes.munawwarRanaImage,
+      'title': StringRes.muNawWarRana,
     },
     {
-      'image':AssetRes.ahmadMushtaqImage,
-      'title':StringRes.ahmadMuShtaq,
+      'image': AssetRes.ahmadMushtaqImage,
+      'title': StringRes.ahmadMuShtaq,
     },
-    {
-      'image':AssetRes.kaiFiaZmiImage,
-      'title':StringRes.kaiFiaZmi
-    },
-
+    {'image': AssetRes.kaiFiaZmiImage, 'title': StringRes.kaiFiaZmi},
   ];
 
   static List<Map> famousBookList = [
@@ -105,9 +101,9 @@ class StringRes{
   ];
 
   static const topPoets = "Top Poets";
-  static const muNawWarRana="Munawwar Rana";
-  static const ahmadMuShtaq="Ahmad Mushtaq";
-  static const kaiFiaZmi="Kaifi azmi";
+  static const muNawWarRana = "Munawwar Rana";
+  static const ahmadMuShtaq = "Ahmad Mushtaq";
+  static const kaiFiaZmi = "Kaifi azmi";
 
   ///----------------------------famousBookScreen------------------------------///
   static List<Map> famousBookData = [
@@ -149,21 +145,22 @@ class StringRes{
     },
   ];
 
-  static const famousBook="Famous Book";
+  static const famousBook = "Famous Book";
 
- ///---------------------------viewScreen--------------------------------------///
-  static const poetry="Poetry";
-  static const topLovePoems="Top Love Poems";
-  static const topFriendshipPoems="Top Friendship Poems";
+  ///---------------------------viewScreen--------------------------------------///
+  static const poetry = "Poetry";
+  static const topLovePoems = "Top Love Poems";
+  static const topFriendshipPoems = "Top Friendship Poems";
 
   ///---------------------------timeIsMotherScreen-----------------------------///
-  static const timeIsMother="Time is Mother";
-  static const book="Book";
-  static const author="Author";
-  static const authorString="Ocean Vuong";
-  static const pubilshed="Pubilshed";
-  static const pubilshedString="April 5,2022";
+  static const timeIsMother = "Time is Mother";
+  static const book = "Book";
+  static const author = "Author";
+  static const authorString = "Ocean Vuong";
+  static const pubilshed = "Pubilshed";
+  static const pubilshedString = "April 5,2022";
 
+  ///--------------bottomNavScreen----------------------///
 
 
   ///---------------------------bottomNavScreen--------------------------------///
@@ -181,4 +178,26 @@ class StringRes{
   static const notification="Notification";
 
 
+
+  ///--------------poemScreen----------------------///
+  static const poem = "Poem";
+  static const poemString =
+      "Every time am hurt,\nYou help me heal.\nI wish to tell you now\n Of how, my core feels.\n\nA hope,"
+      "a faith,\nYou are all I crave.\nYou are calm and clear\n Soft and tender, yet brave.\n\nI see, live, and taste dreams\n"
+      "With you around.\nWhen my soul is not with yours\n I feel, am going down.\n\nMay we always stay in love.\n";
+
+  ///--------------bookmarkScreen----------------------///
+  static const bookmark = "Bookmark";
+
+  ///--------------Profile Screen----------------------///
+  static const usernameProfile = "Iriana Saliha";
+  static const emailProfile = "Irianasalish@gmail.com";
+  static const profileTitle = "Profile";
+  static const username = "username";
+  static const email = "Email";
+  static const gender = "Gender";
+  static const dob = "Date Of Birth";
+
+  ///--------------EditProfile Screen----------------------///
+  static const saveButtonText = "Save";
 }

@@ -46,7 +46,16 @@ class AssetRes {
   static const share2Image = "${imageBase}share2.png";
 
   ///----------------------bottom NavBar Screen------------------------------------///
-  static const bottomNavBarCenterFeatherImage = "${imageBase}feather.png";
+  static const featherImage = "${imageBase}feather.png";
+
+  ///----------------------Poem Screen------------------------------------///
+  static const goldenFrameImage = "${imageBase}goldenframe.png";
+  static const collectionIconImage = "${imageBase}collection_icon.png";
+  static const whiteBorderCurveImage = "${imageBase}whiteBorder_curve.png";
+  static const shareIconImage = "${imageBase}shareIcon.png";
+
+  ///----------------------Profile Screen------------------------------------///
+  static const irianaProfileImage = "${imageBase}Iriana_Saliha_profile.png";
 
   ///----------------------addPoemScreen---------------------------------------///
   static const downloadImage="${imageBase}download.png";

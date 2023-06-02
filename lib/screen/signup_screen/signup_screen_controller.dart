@@ -1,18 +1,19 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/padding_widget.dart';
 import 'package:poetry/common/text_widget.dart';
-import 'package:poetry/screen/home_screen/home_screen.dart';
 import 'package:poetry/utils/color_res.dart';
 
 import '../../common/iconbutton_widget.dart';
 import '../../common/sizedbox_widget.dart';
 import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
+import '../bottom_navbar_screen/bottom_navbar_screen.dart';
 import '../login_screen/login_screen.dart';
 
 class SignUpController extends GetxController {
+  GlobalKey<FormState> signupKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool signupVisiBal = true;
   bool termsConditionsAgreedCheckbox = false;
 
@@ -24,10 +25,17 @@ class SignUpController extends GetxController {
     Get.back();
   }
 
+  String? usernameConditon(val) {
+    return val!.isEmpty ? "Please enter username" : null;
+  }
+
   String? signupEmailCondition(val) {
     update(['email']);
-    val!.isEmpty ? 'Please Enter Email' : null;
-    return null;
+    bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(val!);
+
+    return emailValid ? null : 'Please Enter Valid Email Address';
   }
 
   String? signupPassWordCondition(val) {
@@ -45,7 +53,11 @@ class SignUpController extends GetxController {
   }
 
   void signupButton() {
-    Get.to(LoginScreen());
+    if (signupKey.currentState!.validate()) {
+      Get.to(LoginScreen());
+    } else {
+      Get.snackbar('SignUp Failed', 'Fill the blank');
+    }
   }
 
   String? termsAndCondition(agreedToChecked) {
@@ -75,21 +87,21 @@ class SignUpController extends GetxController {
                   children: [
                     sizedBoxWidget(height: h * 0.0269),
                     iconWidget(
-                        icon: const Icon(IconRes.clearIcon,color: ColorRes.whiteColor),
+                        icon: const Icon(IconRes.clearIcon,
+                            color: ColorRes.whiteColor),
                         onPressed: () {
                           Get.back();
                         }),
                   ],
                 ),
-                sizedBoxWidget(height: h* 0.030),
+                sizedBoxWidget(height: h * 0.030),
                 Row(
                   children: [
                     commonTextWidget(
-                      text:StringRes.termsAndConditionString,
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700
-                    )
+                        text: StringRes.termsAndConditionString,
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700)
                   ],
                 ),
                 sizedBoxWidget(height: h * 0.030),
@@ -119,7 +131,7 @@ class SignUpController extends GetxController {
                                   borderRadius: BorderRadius.circular(5))),
                         ),
                         onPressed: () {
-                          Get.to(const HomeScreen());
+                          Get.to(const BottomNavBarSrceen());
                         },
                         child: paddingWidget(
                           left: w * 0.06,

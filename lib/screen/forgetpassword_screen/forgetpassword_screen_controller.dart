@@ -12,8 +12,11 @@ class ForGetController extends GetxController {
 
   String? forGetEmailCondition(val) {
     update(['email']);
-    val!.isEmpty ? 'Please Enter Email' : null;
-    return null;
+    bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(val!);
+
+    return emailValid ? null : 'Please Enter Valid Email Address';
   }
 
   String? forGetPassWordCondition(val) {
@@ -30,12 +33,13 @@ class ForGetController extends GetxController {
     update(['forGetPassword']);
   }
 
-  void forGetNewPassSuFix(){
-    forGetNewVisiBal=!forGetNewVisiBal;
+  void forGetNewPassSuFix() {
+    forGetNewVisiBal = !forGetNewVisiBal;
     update(['forGetNewPassword']);
   }
+
   void confirmButton() {
-    Get.to( LoginScreen());
+    Get.to(LoginScreen());
   }
 
   void forGetBackArrow() {

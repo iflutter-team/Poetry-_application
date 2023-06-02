@@ -6,14 +6,19 @@ import 'package:poetry/screen/signup_screen/signup_screen.dart';
 import '../home_screen/home_screen.dart';
 
 class LoginController extends GetxController {
+  GlobalKey<FormState> loginKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool visiBal = true;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
   String? emailCondition(val) {
     update(['email']);
-    val!.isEmpty ? 'Please Enter Email' : null;
-    return null;
+    bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(val!);
+
+    return emailValid ? null : 'Please Enter Valid Email Address';
   }
 
   String? passWordCondition(val) {
@@ -23,26 +28,30 @@ class LoginController extends GetxController {
     return passValid
         ? null
         : 'contain atLeast one Capital Letter, Small Letters, Numbers & a special character ';
-
   }
 
-  void passSuFix(){
+  void passSuFix() {
     visiBal = !visiBal;
     update(['password']);
   }
 
-  void forGetPage(){
+  void forGetPage() {
     Get.to(const ForGetPassWord());
   }
-  void loginButton(){
-    Get.offAll(const HomeScreen());
+
+  void loginButton() {
+    if (loginKey.currentState!.validate()) {
+      Get.offAll(const BottomNavBarSrceen());
+    } else {
+      Get.snackbar('Login Failed', 'Fill the blank');
+    }
   }
-  void account(){
-    Get.to( SignUpScreen());
+
+  void account() {
+    Get.to(SignUpScreen());
   }
-  void backArrow(){
+
+  void backArrow() {
     Get.back();
   }
 }
-
-

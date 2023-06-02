@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/sizedbox_widget.dart';
@@ -27,7 +26,7 @@ Widget fullNameTextFieldWidget() {
       builder: (controller) {
         return commonTextField(
           controller: controller.fullName,
-          validator: controller.signupEmailCondition,
+          validator: controller.usernameConditon,
           hintTextString: StringRes.fullNameString,
           width: w * 0.893,
           height: h * 0.067,
@@ -99,7 +98,7 @@ Widget termsConditions(BuildContext context) {
       id: 'checked',
       builder: (controller) {
         return Row(children: [
-          sizedBoxWidget(width: w*0.0433,height: h*0.0433),
+          sizedBoxWidget(width: w * 0.0433, height: h * 0.0433),
           chkBox(
             checkColor: const Color(0xff0F3E1A),
             activeColor: Colors.white,
@@ -109,14 +108,13 @@ Widget termsConditions(BuildContext context) {
           ),
           commonTextWidget(text: StringRes.agreedString, color: Colors.white),
           TextButton(
-              onPressed:()=>controller.termsAndConditionDialog(context),
+              onPressed: () => controller.termsAndConditionDialog(context),
               child: commonTextWidget(
                   text: StringRes.termsAndConditionString,
                   color: Colors.white60)),
         ]);
       });
 }
-
 
 Widget signupButton() {
   double h = Get.height;

@@ -1,14 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poetry/common/text_widget.dart';
 
+import '../../common/animatedcontainerwidget.dart';
 import '../../common/common_container.dart';
+import '../../common/text_widget.dart';
 import '../../utils/asset_res.dart';
 import '../../utils/string_res.dart';
+import 'bookmark_screen_controller.dart';
 
-Widget poemFrame() {
-  double w = Get.width;
-  double h = Get.height;
+Widget pageViewOfBookmarkScreen() {
+  return GetBuilder<BookmarkScreenController>(builder: (controller) {
+    return Expanded(
+      child: PageView.builder(
+        physics: const BouncingScrollPhysics(),
+        itemCount: 3,
+        onPageChanged: controller.pageViewOfBookmarkScreen,
+        itemBuilder: (context, index) {
+          return poemFrameOfPageView();
+        },
+      ),
+    );
+  });
+}
+
+double w = Get.width;
+double h = Get.height;
+
+Widget poemFrameOfPageView() {
   return commonContainer(
     height: h * 0.68,
     width: w * 0.98,
@@ -28,7 +46,7 @@ Widget poemFrame() {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: w * 0.090, bottom: h * 0.26),
+                  padding: EdgeInsets.only(left: w * 0.095, bottom: h * 0.27),
                   child: Image.asset(AssetRes.collectionIconImage),
                 ),
               ],
@@ -38,7 +56,7 @@ Widget poemFrame() {
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: h * 0.140),
+                      padding: EdgeInsets.only(top: h * 0.14),
                       child: Container(
                           height: h * 0.040,
                           width: w * 0.58,
@@ -75,7 +93,7 @@ Widget poemFrame() {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: h * 0.52, right: w * 0.08),
+                  padding: EdgeInsets.only(top: h * 0.56, right: w * 0.09),
                   child: Image.asset(
                     AssetRes.shareIconImage,
                     width: w * 0.060,
@@ -88,4 +106,31 @@ Widget poemFrame() {
       ],
     ),
   );
+}
+
+Widget pageViewOfBookmark() {
+  return GetBuilder<BookmarkScreenController>(
+      id: 'indicator',
+      builder: (controller) {
+        return SizedBox(
+          height: h * 0.070,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              commonDot(
+                index: 0,
+                pageIndex: controller.pageIndex,
+              ),
+              commonDot(
+                index: 1,
+                pageIndex: controller.pageIndex,
+              ),
+              commonDot(
+                index: 2,
+                pageIndex: controller.pageIndex,
+              ),
+            ],
+          ),
+        );
+      });
 }

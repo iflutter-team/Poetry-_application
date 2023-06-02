@@ -1,14 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
 
 Widget commonTextField(
-    {required double width,
-      required double height,
-      required TextEditingController controller,
-       String? Function(dynamic val)? validator,
-      required bool obscureText,
-      Widget? suffixIcon,
-      required String hintTextString}) {
+    {double? width,
+    double? height,
+    TextEditingController? controller,
+    String? Function(dynamic val)? validator,
+    required bool obscureText,
+    Widget? suffixIcon,
+    String? hintTextString,
+    InputDecoration? decoration,
+    bool? enabled}) {
   return SizedBox(
     width: width,
     height: height,
@@ -23,12 +25,12 @@ Widget commonTextField(
         validator: validator,
         controller: controller,
         decoration: InputDecoration(
-            hintStyle: const TextStyle(color: Colors.white),
-            hintText: hintTextString,
-            border: InputBorder.none,
-          suffixIcon:suffixIcon,
+          hintStyle: const TextStyle(color: Colors.white),
+          hintText: hintTextString,
+          border: InputBorder.none,
+          suffixIcon: suffixIcon,
         ),
-        obscureText:obscureText ,
+        obscureText: obscureText,
         style: const TextStyle(color: Colors.white),
       ),
     ),

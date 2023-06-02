@@ -12,61 +12,66 @@ import '../../utils/string_res.dart';
 
 // ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
-   SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key}) : super(key: key);
 
-  double h=Get.height;
+  double h = Get.height;
 
-  double w=Get.width;
+  double w = Get.width;
 
   @override
   Widget build(BuildContext context) {
     Get.put(SignUpController());
-    return  Scaffold(
-      backgroundColor: ColorRes.greenColor,
-      body: paddingWidget(
-        left: w * 0.015,
-        right: w * 0.015,
-        top: h * 0.050,
-        bottom: h*0.0,
-        widget: SingleChildScrollView(
-          child: Container(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Row(
-                  children: [signScreenArrow()],
+    return GetBuilder<SignUpController>(builder: (controller) {
+      return Scaffold(
+        backgroundColor: ColorRes.greenColor,
+        body: paddingWidget(
+          left: w * 0.015,
+          right: w * 0.015,
+          top: h * 0.050,
+          bottom: h * 0.0,
+          widget: SingleChildScrollView(
+            child: Container(
+              alignment: Alignment.center,
+              child: Form(
+                key: controller.signupKey,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [signScreenArrow()],
+                    ),
+                    sizedBoxWidget(
+                      height: h * 0.0304,
+                    ),
+                    poetryPageImage(height: h * 0.260),
+                    sizedBoxWidget(
+                      height: h * 0.0304,
+                    ),
+                    commonTextWidget(
+                        text: StringRes.signUpString,
+                        fontSize: 18,
+                        color: Colors.white),
+                    sizedBoxWidget(
+                      height: h * 0.0299,
+                    ),
+                    fullNameTextFieldWidget(),
+                    sizedBoxWidget(height: h * 0.0299),
+                    signUpEmailTextFieldWidget(),
+                    sizedBoxWidget(
+                      height: h * 0.0299,
+                    ),
+                    signUpPassTextFieldWidget(),
+                    termsConditions(context),
+                    sizedBoxWidget(
+                      height: h * 0.033,
+                    ),
+                    signupButton(),
+                  ],
                 ),
-                sizedBoxWidget(
-                  height: h * 0.0304,
-                ),
-                poetryPageImage(height: h * 0.260),
-                sizedBoxWidget(
-                  height: h * 0.0304,
-                ),
-                commonTextWidget(
-                    text: StringRes.signUpString,
-                    fontSize: 18,
-                    color: Colors.white),
-                sizedBoxWidget(
-                  height: h * 0.0299,
-                ),
-                fullNameTextFieldWidget(),
-                sizedBoxWidget(height: h * 0.0299),
-                signUpEmailTextFieldWidget(),
-                sizedBoxWidget(
-                  height: h * 0.0299,
-                ),
-                signUpPassTextFieldWidget(),
-                termsConditions(context),
-                sizedBoxWidget(
-                  height: h *  0.033,
-                ),
-                signupButton(),
-              ],
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
