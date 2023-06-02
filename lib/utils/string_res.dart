@@ -1,7 +1,6 @@
 import 'asset_res.dart';
 
-class StringRes{
-
+class StringRes {
   ///--------------introductionScreen------------------///
   static const introductionPageSkipButton = "Skip";
   static const introductionPageBottomText =
@@ -162,7 +161,6 @@ class StringRes{
 
   ///--------------bottomNavScreen----------------------///
 
-
   ///---------------------------bottomNavScreen--------------------------------///
   static const homeText = "Home";
   static const bookmarkText = "Bookmark";
@@ -170,14 +168,12 @@ class StringRes{
   static const profileText = "Profile";
 
   ///----------------------------addPoemScreen---------------------------------///
-  static const addPoem="Add Poem";
-  static const categories="Categories";
-  static const title="Title";
+  static const addPoem = "Add Poem";
+  static const categories = "Categories";
+  static const title = "Title";
 
   ///----------------------------notificationScreen----------------------------///\
-  static const notification="Notification";
-
-
+  static const notification = "Notification";
 
   ///--------------poemScreen----------------------///
   static const poem = "Poem";

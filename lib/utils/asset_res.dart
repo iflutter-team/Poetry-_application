@@ -58,9 +58,8 @@ class AssetRes {
   static const irianaProfileImage = "${imageBase}Iriana_Saliha_profile.png";
 
   ///----------------------addPoemScreen---------------------------------------///
-  static const downloadImage="${imageBase}download.png";
+  static const downloadImage = "${imageBase}download.png";
 
   ///-----------------------notificationScreen----------------------------------///
-  static const notificationImage="${imageBase}notification.png";
-
+  static const notificationImage = "${imageBase}notification.png";
 }
