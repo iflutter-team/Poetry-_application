@@ -17,10 +17,13 @@ PreferredSizeWidget commonAppbar(BuildContext context,
   return AppBar(
     backgroundColor: backgroundColor,
     leading: InkWell(
-      onTap: (){
-        Get.back();
-      },
-        child: commonIcon(color: ColorRes.greenColor, icon: leadingIcon,)),
+        onTap: () {
+          Get.back();
+        },
+        child: commonIcon(
+          color: ColorRes.greenColor,
+          icon: leadingIcon,
+        )),
     title: commonTextWidget(
         text: title,
         color: ColorRes.greenColor,
