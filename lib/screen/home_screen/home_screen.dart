@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poetry/common/sizedbox_widget.dart';
 import 'package:poetry/screen/home_screen/home_screen_controller.dart';
 import 'package:poetry/utils/color_res.dart';
 
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h=Get.height;
     Get.put(HomeScreenController());
     return Scaffold(
       backgroundColor: ColorRes.greenColor,
@@ -28,6 +30,7 @@ class HomeScreen extends StatelessWidget {
                 topPoetsList(context),
                 rowThreeWidget(),
                 famousBookList(context),
+                sizedBoxWidget(height: h*0.10),
               ],
             ),
           ),
