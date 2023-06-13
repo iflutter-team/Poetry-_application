@@ -31,6 +31,7 @@ class LoginScreen extends StatelessWidget {
           top: h * 0.050,
           bottom: h * 0.0,
           widget: SingleChildScrollView(
+            physics: const NeverScrollableScrollPhysics(),
             child: Container(
               alignment: Alignment.center,
               child: Form(

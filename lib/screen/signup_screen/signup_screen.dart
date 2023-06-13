@@ -13,9 +13,7 @@ import '../../utils/string_res.dart';
 // ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
-
   double h = Get.height;
-
   double w = Get.width;
 
   @override
@@ -30,6 +28,7 @@ class SignUpScreen extends StatelessWidget {
           top: h * 0.050,
           bottom: h * 0.0,
           widget: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Container(
               alignment: Alignment.center,
               child: Form(

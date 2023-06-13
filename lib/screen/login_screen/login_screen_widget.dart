@@ -6,18 +6,16 @@ import 'package:poetry/common/login_signup_button.dart';
 import 'package:poetry/common/textfield_widget.dart';
 import 'package:poetry/screen/login_screen/login_screen_controller.dart';
 import 'package:poetry/utils/color_res.dart';
+
 import '../../common/text_widget.dart';
 import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
 
 Widget arrow() {
-  return GetBuilder<LoginController>(
-    builder: (controller) {
-      return backArrow(onPressed:controller.backArrow);
-    }
-  );
+  return GetBuilder<LoginController>(builder: (controller) {
+    return backArrow(onPressed: controller.backArrow);
+  });
 }
-
 
 Widget emailTextFieldWidget() {
   double h = Get.height;
@@ -78,17 +76,28 @@ Widget forgetPassWordButton() {
   });
 }
 
+//GlobalKey<FormState> loginKey = GlobalKey<FormState>();
 Widget loginButton() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<LoginController>(
-      id: 'login',
+      id: 'LoginButton',
       builder: (controller) {
         return commonBottomLoginORSignUpButton(
             leftPadding: w * 0.32,
             rightPadding: w * 0.32,
             topPadding: h * 0.02,
             bottomPadding: h * 0.02,
+            // onPressed: () {
+            //   if (controller.loginKey.currentState!.validate()) {
+            //     termsAndConditionDialog(acceptOnPressed: () {
+            //       Get.offAll(const BottomNavBarSrceen());
+            //     });
+            //   } else {
+            //     Get.snackbar('Login Failed', 'Fill The Information',
+            //         backgroundColor: Colors.white30);
+            //   }
+            // },
             onPressed: controller.loginButton,
             buttonText: StringRes.loginString);
       });

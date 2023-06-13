@@ -48,30 +48,6 @@ Widget bottomNavBar() {
                       size: Size(w, 80),
                       painter: CustomPainterWidget(),
                     ),
-                    Center(
-                      heightFactor: 0.6,
-                      child: FloatingActionButton(
-                        onPressed: () => controller.onTapBottom(2),
-                        backgroundColor: Colors.white,
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: DottedBorder(
-                            color: ColorRes.greenColor,
-                            borderType: BorderType.Circle,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image.asset(
-                                color: controller.selectedIndex == 2
-                                    ? Colors.white
-                                    : ColorRes.greenColor,
-                                AssetRes.featherImage,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
                     Container(
                       height: h * 0.70,
                       width: w,
@@ -94,16 +70,11 @@ Widget bottomNavBar() {
                           ),
                           Column(
                             children: [
-                              GetBuilder<BottomNavBarController>(
-                                  id: 'navigationBar',
-                                  builder: (controller) {
-                                    return commonIconButton(
-                                        onPressed: () =>
-                                            controller.onTapBottom(1),
-                                        icon: Icon(controller.selectedIndex == 1
-                                            ? Icons.bookmark
-                                            : Icons.bookmark_border));
-                                  }),
+                              commonIconButton(
+                                  onPressed: () => controller.onTapBottom(1),
+                                  icon: Icon(controller.selectedIndex == 1
+                                      ? Icons.bookmark
+                                      : Icons.bookmark_border)),
                               commonTextWidget(text: StringRes.bookmarkText)
                             ],
                           ),
@@ -112,35 +83,53 @@ Widget bottomNavBar() {
                           ),
                           Column(
                             children: [
-                              GetBuilder<BottomNavBarController>(
-                                  id: 'navigationBar',
-                                  builder: (controller) {
-                                    return commonIconButton(
-                                        onPressed: () =>
-                                            controller.onTapBottom(3),
-                                        icon: Icon(controller.selectedIndex == 3
-                                            ? Icons.notifications
-                                            : Icons.notifications_none));
-                                  }),
+                              commonIconButton(
+                                  onPressed: () => controller.onTapBottom(3),
+                                  icon: Icon(controller.selectedIndex == 3
+                                      ? Icons.notifications
+                                      : Icons.notifications_none)),
                               commonTextWidget(text: StringRes.notificationText)
                             ],
                           ),
                           Column(
                             children: [
-                              GetBuilder<BottomNavBarController>(
-                                  id: 'bookmarkIcon',
-                                  builder: (controller) {
-                                    return commonIconButton(
-                                        onPressed: () =>
-                                            controller.onTapBottom(4),
-                                        icon: Icon(controller.selectedIndex == 4
-                                            ? Icons.person
-                                            : Icons.person_outline));
-                                  }),
+                              commonIconButton(
+                                  onPressed: () => controller.onTapBottom(4),
+                                  icon: Icon(controller.selectedIndex == 4
+                                      ? Icons.person
+                                      : Icons.person_outline)),
                               commonTextWidget(text: StringRes.profileText)
                             ],
                           ),
                         ],
+                      ),
+                    ),
+                    Center(
+                      heightFactor: 0.6,
+                      child: FloatingActionButton(
+                        onPressed: () => controller.onTapBottom(2),
+                        backgroundColor: controller.selectedIndex == 2
+                            ? ColorRes.greenColor
+                            : Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: DottedBorder(
+                            color: controller.selectedIndex == 2
+                                ? Colors.white
+                                : ColorRes.greenColor,
+                            borderType: BorderType.Circle,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                color: controller.selectedIndex == 2
+                                    ? Colors.white
+                                    : ColorRes.greenColor,
+                                AssetRes.featherImage,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     )
                   ],

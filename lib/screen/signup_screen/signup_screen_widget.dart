@@ -14,7 +14,7 @@ import 'signup_screen_controller.dart';
 
 Widget signScreenArrow() {
   return GetBuilder<SignUpController>(builder: (controller) {
-    return backArrow(onPressed: controller.signUpBackArrow);
+    return backArrow(onPressed: () => Get.back());
   });
 }
 
@@ -94,26 +94,30 @@ Widget chkBox(
 Widget termsConditions(BuildContext context) {
   double h = Get.height;
   double w = Get.width;
-  return GetBuilder<SignUpController>(
-      id: 'checked',
-      builder: (controller) {
-        return Row(children: [
-          sizedBoxWidget(width: w * 0.0433, height: h * 0.0433),
-          chkBox(
+  return Row(children: [
+    sizedBoxWidget(width: w * 0.0433, height: h * 0.0433),
+    GetBuilder<SignUpController>(
+        id: 'checked',
+        builder: (controller) {
+          return chkBox(
             checkColor: const Color(0xff0F3E1A),
             activeColor: Colors.white,
             side: const BorderSide(color: Colors.white),
             value: controller.termsConditionsAgreedCheckbox,
             onChanged: controller.termsAndCondition,
-          ),
-          commonTextWidget(text: StringRes.agreedString, color: Colors.white),
-          TextButton(
-              onPressed: () => controller.termsAndConditionDialog(context),
+          );
+        }),
+    commonTextWidget(text: StringRes.agreedString, color: Colors.white),
+    GetBuilder<SignUpController>(
+        id: 'chkBoxCondition',
+        builder: (controller) {
+          return TextButton(
+              onPressed: controller.chkBoxCondition,
               child: commonTextWidget(
                   text: StringRes.termsAndConditionString,
-                  color: Colors.white60)),
-        ]);
-      });
+                  color: Colors.white60));
+        }),
+  ]);
 }
 
 Widget signupButton() {

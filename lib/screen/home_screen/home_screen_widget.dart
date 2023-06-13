@@ -18,9 +18,9 @@ import '../../utils/string_res.dart';
 import '../introduction_screen/introduction_screen_widget.dart';
 import 'home_screen_controller.dart';
 
+double h = Get.height;
+double w = Get.width;
 AppBar appBarWidget() {
-  double h = Get.height;
-  double w = Get.width;
   return AppBar(
     centerTitle: true,
     backgroundColor: ColorRes.whiteColor,
@@ -41,18 +41,21 @@ AppBar appBarWidget() {
     title: commonTextWidget(
         text: StringRes.homePageAppbar,
         color: ColorRes.greenColor,
-        fontSize: 20,
+        fontSize: h * 0.024,
         fontWeight: FontWeight.bold),
     actions: [
       Image.asset(
         AssetRes.homeAppBarEnglishImg,
         width: w * 0.09,
       ),
+      SizedBox(
+        width: w * 0.01,
+      ),
       GetBuilder<HomeScreenController>(
           id: 'switch',
           builder: (controller) => FlutterSwitch(
-                toggleSize: 20,
-                height: h * 0.0350,
+                toggleSize: h * 0.022,
+                height: h * 0.0300,
                 width: w * 0.1072,
                 activeColor: ColorRes.greenColor,
                 inactiveColor: ColorRes.switchInactiveColor,
@@ -61,6 +64,9 @@ AppBar appBarWidget() {
                   controller.switchWidget(value);
                 },
               )),
+      SizedBox(
+        width: w * 0.01,
+      ),
       Image.asset(
         AssetRes.homeAppBarHindiImg,
         width: w * 0.09,
@@ -77,7 +83,7 @@ Widget carouselSliderWidget() {
             (index) => Image.asset(controller.carouselSliderdList[index])),
         options: CarouselOptions(
             onPageChanged: controller.carouselSliderCondition,
-            height: 210,
+            height: h * 0.250,
             enlargeCenterPage: true,
             autoPlay: true,
             aspectRatio: 16 / 9,
@@ -112,7 +118,6 @@ Widget pageView() {
 }
 
 Widget rowWidget() {
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
         text: StringRes.popularCategories,
@@ -125,8 +130,6 @@ Widget rowWidget() {
 Widget popularCategoriesList(
   BuildContext context,
 ) {
-  double h = Get.height;
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
       height: h * 0.700,
@@ -191,7 +194,6 @@ Widget popularCategoriesList(
 }
 
 Widget rowTwoWidget() {
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
         text: StringRes.topPoets,
@@ -202,8 +204,6 @@ Widget rowTwoWidget() {
 }
 
 Widget topPoetsList(BuildContext context) {
-  double h = MediaQuery.of(context).size.height;
-  double w = MediaQuery.of(context).size.width;
   return sizedBoxWidget(
     height: h * 0.2339,
     width: w * 0.9926,
@@ -261,21 +261,19 @@ Widget topPoetsList(BuildContext context) {
 }
 
 Widget rowThreeWidget() {
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
-        text: StringRes.famousBook,
-        width: w * 0.48,
-        onPressed:controller.famousBookCondition, onPressedView: () {  },
-        );
+      text: StringRes.famousBook,
+      width: w * 0.48,
+      onPressed: controller.famousBookCondition,
+      onPressedView: () {},
+    );
   });
 }
 
 Widget famousBookList(
   BuildContext context,
 ) {
-  double h = Get.height;
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
       height: h * 0.700,
@@ -343,22 +341,20 @@ Widget containerCondition() {
   return GetBuilder<HomeScreenController>(
       id: "animatedContainer",
       builder: (controller) {
-    return GestureDetector(
-      onTap: controller.gestureDetectorCondition,
-      child: controller.selected
-          ? Container(
-              color: const Color(0xff0F3E1A).withOpacity(0.8),
-              height: double.infinity,
-              width: double.infinity,
-            )
-          : const SizedBox(),
-    );
-  });
+        return GestureDetector(
+          onTap: controller.gestureDetectorCondition,
+          child: controller.selected
+              ? Container(
+                  color: const Color(0xff0F3E1A).withOpacity(0.8),
+                  height: double.infinity,
+                  width: double.infinity,
+                )
+              : const SizedBox(),
+        );
+      });
 }
 
 Widget animatedContainer(BuildContext context) {
-  double h = Get.height;
-  double w = Get.width;
   return GetBuilder<HomeScreenController>(
       id: 'animatedContainer',
       builder: (controller) {

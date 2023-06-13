@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen.dart';
 import 'package:poetry/screen/signup_screen/signup_screen.dart';
 
+import '../../common/termscondition.dart';
 import '../bottom_navbar_screen/bottom_navbar_screen.dart';
 
 class LoginController extends GetxController {
@@ -11,6 +12,19 @@ class LoginController extends GetxController {
   bool visiBal = true;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    loginButton();
+    // email.clear();
+    // password.clear();
+    //
+    // termsAndConditionDialog(acceptOnPressed: () {
+    //   Get.offAll(const BottomNavBarSrceen());
+    // });
+  }
 
   String? emailCondition(val) {
     update(['email']);
@@ -39,12 +53,22 @@ class LoginController extends GetxController {
     Get.to(const ForGetPassWord());
   }
 
-  void loginButton() {
+  //var screenIndex = 'loginScreen';
+  Future<void> loginButton() async {
+    print('login click');
     if (loginKey.currentState!.validate()) {
-      Get.offAll(const BottomNavBarSrceen());
+      await termsAndConditionDialog(
+          acceptOnPressed: () => Get.offAll(const BottomNavBarSrceen()),
+          declineOnPressed: () {
+            Get.back();
+          });
+      email.clear();
+      password.clear();
     } else {
-      Get.snackbar('Login Failed', 'Fill the blank');
+      Get.snackbar('Login Failed', 'Fill The Information',
+          backgroundColor: Colors.white30);
     }
+    update(['LoginButton']);
   }
 
   void account() {
