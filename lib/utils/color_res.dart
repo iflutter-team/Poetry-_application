@@ -21,4 +21,7 @@ class ColorRes {
   static const usernameStringColor = Colors.white;
   static const emailStringColor = Colors.white;
   static Color formStringColor = Colors.white.withOpacity(0.9);
+
+  ///------------------profile-------------------///
+  static const pageviewOrangeColor = Colors.orange;
 }
