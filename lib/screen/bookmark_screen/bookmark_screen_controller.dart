@@ -9,4 +9,7 @@ class BookmarkScreenController extends GetxController {
     pageIndex = value;
     update(['indicator']);
   }
+  void onTabCondition(){
+    Get.back();
+  }
 }

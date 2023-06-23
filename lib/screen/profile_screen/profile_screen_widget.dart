@@ -1,12 +1,17 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:poetry/common/common_container.dart';
 import 'package:poetry/common/text_widget.dart';
+import 'package:poetry/screen/profile_screen/profile_screen_controller.dart';
 
 import '../../common/padding_widget.dart';
 import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
+import '../edit_profile/edit_profile_controller.dart';
 
 double w = Get.width;
 double h = Get.height;
@@ -39,34 +44,45 @@ AppBar appbarProfile(
   );
 }
 
-Widget profileView() {
-  return commonContainer(
-      height: h * 0.24,
-      width: w * 0.90,
-      child: Column(
-        children: [
-          const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage(AssetRes.irianaProfileImage),
-          ),
-          SizedBox(
-            height: h * 0.007,
-          ),
-          commonTextWidget(
-              color: ColorRes.usernameStringColor,
-              text: StringRes.usernameProfile,
-              fontSize: 16,
-              fontWeight: FontWeight.bold),
-          SizedBox(
-            height: h * 0.007,
-          ),
-          commonTextWidget(
-              color: ColorRes.emailStringColor,
-              text: StringRes.emailProfile,
-              fontSize: 14,
-              fontWeight: FontWeight.bold),
-        ],
-      ));
+Widget profileView({ImageProvider<Object>? backgroundImage,void Function()? InkwellonTap}) {
+  return GetBuilder<ProfileScreenController>(
+    id: 'imagePicker',
+    builder: (controller) {
+      return commonContainer(
+          height: h * 0.24,
+          width: w * 0.90,
+          child: Column(
+            children: [
+               InkWell(
+                 onTap: InkwellonTap,
+                 // controller.imagePickerCondition,
+                 child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: backgroundImage
+                  // controller.file==null
+                  // ?const AssetImage(AssetRes.irianaProfileImage):FileImage(controller.file!) as ImageProvider,
+                 ),
+               ),
+              SizedBox(
+                height: h * 0.007,
+              ),
+              commonTextWidget(
+                  color: ColorRes.usernameStringColor,
+                  text: StringRes.usernameProfile,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+              SizedBox(
+                height: h * 0.007,
+              ),
+              commonTextWidget(
+                  color: ColorRes.emailStringColor,
+                  text: StringRes.emailProfile,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ],
+          ));
+    }
+  );
 }
 
 Widget profileDataField() {
@@ -133,6 +149,7 @@ Widget commonDisableTextFieldProfile({bool? enabled}) {
       child: TextFormField(
         obscureText: false,
         enabled: enabled,
+        style: const TextStyle(color: ColorRes.whiteColor),
         decoration: const InputDecoration(
           //border: InputBorder.none,
           disabledBorder:

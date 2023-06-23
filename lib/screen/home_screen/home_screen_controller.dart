@@ -39,13 +39,12 @@ class HomeScreenController extends GetxController {
   }
 
   void famousBookCondition(){
-    Get.to(const FamousBook());
+    Get.to(FamousBook());
   }
 
   void gestureDetectorCondition(){
         selected = false;
         update(['animatedContainer']);
-
   }
 
   void animatedContainerCondition(val){
@@ -55,6 +54,6 @@ class HomeScreenController extends GetxController {
 
   void languageCondition(val){
     gp = val.toString();
-    update(['animatedContainer']);
+    update(['radiobutton']);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poetry/services/firebase_services.dart';
 
 import '../../common/termscondition.dart';
 import '../login_screen/login_screen.dart';
@@ -18,6 +19,7 @@ class SignUpController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+    signupButton();
   }
 
   @override
@@ -57,10 +59,28 @@ class SignUpController extends GetxController {
     update(['forGetPassword']);
   }
 
-  void signupButton() {
+  Future<void> signupButton() async {
     if (signupKey.currentState!.validate()) {
+     await termsAndConditionDialog(acceptOnPressed: (){
+        print("i accept terms and condition");
+        termsConditionsAgreedCheckbox = true;
+        print(termsConditionsAgreedCheckbox);
+        update(['chkBoxCondition', 'checked']);
+        Get.back();
+      }, declineOnPressed: (){
+        print("i decline terms and condition");
+        termsConditionsAgreedCheckbox = false;
+        print(termsConditionsAgreedCheckbox);
+        update(['chkBoxCondition', 'checked']);
+        Get.back();
+      });
       if (termsConditionsAgreedCheckbox = true) {
         print(termsConditionsAgreedCheckbox);
+        FirebaseServices.addData('Person', {
+          'FullName': fullName.text,
+          'Email': signupEmail.text,
+          'Password': signupPassword.text
+        });
         Get.to(LoginScreen());
         fullName.clear();
         signupEmail.clear();

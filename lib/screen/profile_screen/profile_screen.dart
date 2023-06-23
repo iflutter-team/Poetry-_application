@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poetry/screen/profile_screen/profile_screen_common.dart';
+import 'package:poetry/screen/profile_screen/profile_screen_widget.dart';
 import 'package:poetry/screen/profile_screen/profile_screen_controller.dart';
+import 'package:poetry/utils/asset_res.dart';
 
 import '../../utils/color_res.dart';
 import '../edit_profile/edit_profile.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     Get.put(ProfileScreenController());
@@ -32,7 +28,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: h * 0.03,
             ),
-            profileView(),
+            GetBuilder<ProfileScreenController>(
+                id: 'imagePickerProfileScreen',
+                builder: (controller) {
+                  return profileView(
+                      backgroundImage: (controller.file == null)
+                          ? AssetImage(AssetRes.irianaProfileImage)
+                          : FileImage(controller.file!) as ImageProvider);
+                }),
             profileDataField(),
           ],
         ),

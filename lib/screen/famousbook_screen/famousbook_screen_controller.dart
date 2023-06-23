@@ -5,4 +5,9 @@ class FamousBookController extends GetxController {
   void famousBookCondition() {
     Get.to(const TimeIsMotherScreen());
   }
+
+  void onIntoBack(){
+    Get.back();
+    // update(['onIntoBack']);
+  }
 }

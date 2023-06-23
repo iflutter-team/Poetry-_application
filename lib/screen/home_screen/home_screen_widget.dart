@@ -496,54 +496,68 @@ Widget animatedContainer(BuildContext context) {
                                                 thickness: 2,
                                                 color: Colors.white38,
                                               ),
-                                              Row(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetRes
-                                                        .homeAppBarEnglishImg,
-                                                    width: 25,
-                                                    color: Colors.white,
-                                                  ),
-                                                  sizedBoxWidget(
-                                                    width: w * 0.15,
-                                                  ),
-                                                  commonTextWidget(
-                                                      text: 'English',
-                                                      fontSize: 16,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  const Spacer(),
-                                                  Radio(
-                                                      value: 'English',
-                                                      groupValue: controller.gp,
-                                                      onChanged: controller
-                                                          .languageCondition)
-                                                ],
+                                              GetBuilder<HomeScreenController>(
+                                                id: 'radiobutton',
+                                                builder: (controller) {
+                                                  return Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        AssetRes
+                                                            .homeAppBarEnglishImg,
+                                                        width: 25,
+                                                        color: Colors.white,
+                                                      ),
+                                                      sizedBoxWidget(
+                                                        width: w * 0.15,
+                                                      ),
+                                                      commonTextWidget(
+                                                          text: 'English',
+                                                          fontSize: 16,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      const Spacer(),
+                                                      Radio(
+                                                          value: 'English',
+                                                          activeColor: ColorRes.whiteColor,
+                                                           fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
+                                                          groupValue: controller.gp,
+                                                          onChanged: controller
+                                                              .languageCondition)
+                                                    ],
+                                                  );
+                                                }
                                               ),
-                                              Row(
-                                                children: [
-                                                  Image.asset(
-                                                    AssetRes.homeAppBarHindiImg,
-                                                    width: 25,
-                                                    color: Colors.white,
-                                                  ),
-                                                  sizedBoxWidget(
-                                                    width: w * 0.15,
-                                                  ),
-                                                  commonTextWidget(
-                                                      text: 'Hindi',
-                                                      fontSize: 16,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  const Spacer(),
-                                                  Radio(
-                                                      value: 'Hindi',
-                                                      groupValue: controller.gp,
-                                                      onChanged: controller
-                                                          .languageCondition)
-                                                ],
+                                              GetBuilder<HomeScreenController>(
+                                                id: 'radiobutton',
+                                                builder: (controller) {
+                                                  return Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        AssetRes.homeAppBarHindiImg,
+                                                        width: 25,
+                                                        color: Colors.white,
+                                                      ),
+                                                      sizedBoxWidget(
+                                                        width: w * 0.15,
+                                                      ),
+                                                      commonTextWidget(
+                                                          text: 'Hindi',
+                                                          fontSize: 16,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      const Spacer(),
+                                                      Radio(
+                                                          value: 'Hindi',
+                                                          fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
+                                                          groupValue: controller.gp,
+                                                          activeColor: ColorRes.whiteColor,
+                                                          onChanged: controller
+                                                              .languageCondition)
+                                                    ],
+                                                  );
+                                                }
                                               )
                                             ],
                                           ),

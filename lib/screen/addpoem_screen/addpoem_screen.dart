@@ -8,6 +8,7 @@ import '../../common/common_appbar.dart';
 import '../../utils/color_res.dart';
 import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
+import '../bottom_navbar_screen/bottom_navbar_screen_controller.dart';
 import 'addpoem_screen_widget.dart';
 
 class AddPoemScreen extends StatelessWidget {
@@ -25,9 +26,10 @@ class AddPoemScreen extends StatelessWidget {
         color: ColorRes.greenColor,
         backgroundColor: ColorRes.whiteColor,
         context,
+        onTapBack:()=>Get.find<BottomNavBarController>().onTapBack(),
         title: StringRes.addPoem,
         leadingIcon: IconRes.backArrowIcon,
-        actionIcon: IconRes.favoriteIcon,
+        actionIcon: IconRes.favoriteIcon, onTap: () {  },
       ),
       body: paddingWidget(
         left: w * 0.04,

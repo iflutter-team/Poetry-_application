@@ -7,20 +7,10 @@ import 'package:poetry/utils/asset_res.dart';
 
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
-import '../addpoem_screen/addpoem_screen.dart';
-import '../bookmark_screen/bookmark_screen.dart';
-import '../home_screen/home_screen.dart';
-import '../notification/notification_screen.dart';
-import '../profile_screen/profile_screen.dart';
+
 import 'bottom_navbar_screen_controller.dart';
 
-List<Widget> screen = [
-  const HomeScreen(),
-  const BookmarkScreen(),
-  const AddPoemScreen(),
-  const NotificationScreen(),
-  const ProfileScreen()
-];
+
 // int index = 0;
 
 Widget bottomNavBar() {
@@ -34,7 +24,7 @@ Widget bottomNavBar() {
             SizedBox(
               height: h,
               width: w,
-              child: screen[controller.selectedIndex],
+              child: controller.screen[controller.selectedIndex],
             ),
             Positioned(
               bottom: 0,
@@ -52,9 +42,11 @@ Widget bottomNavBar() {
                       height: h * 0.70,
                       width: w,
                       decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              topLeft: Radius.circular(20))),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          topLeft: Radius.circular(20),
+                        ),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [

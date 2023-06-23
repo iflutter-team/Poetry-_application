@@ -20,12 +20,13 @@ class ViewScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorRes.greenColor,
       appBar: commonAppbar(
+        onTapBack: () => Get.back(),
         color: ColorRes.greenColor,
         backgroundColor: ColorRes.whiteColor,
         context,
         title: StringRes.poetry,
         leadingIcon: IconRes.backArrowIcon,
-        actionIcon: IconRes.favoriteIcon,
+        actionIcon: IconRes.favoriteIcon, onTap: () {},
       ),
       body: Center(
         child: Column(

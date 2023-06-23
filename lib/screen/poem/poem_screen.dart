@@ -22,7 +22,7 @@ class PoemScreen extends StatelessWidget {
         context,
         title: StringRes.famousBook,
         leadingIcon: IconRes.backArrowIcon,
-        actionIcon: IconRes.favoriteIcon,
+        actionIcon: IconRes.favoriteIcon, onTap: () { },
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

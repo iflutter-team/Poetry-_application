@@ -22,7 +22,7 @@ class TimeIsMotherScreen extends StatelessWidget {
         context,
         title: StringRes.timeIsMother,
         leadingIcon: IconRes.backArrowIcon,
-        actionIcon: IconRes.favoriteIcon,
+        actionIcon: IconRes.favoriteIcon, onTap: () { Get.back(); },
       ),
       body: Column(
         children: [
