@@ -25,14 +25,14 @@ Widget poemFrame() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: w * 0.090, bottom: h * 0.26),
-                  child: Image.asset(AssetRes.collectionIconImage),
-                ),
-              ],
-            ),
+            // Column(
+            //   children: [
+            //     Padding(
+            //       padding: EdgeInsets.only(left: w * 0.090, bottom: h * 0.26),
+            //       child: Image.asset(AssetRes.collectionIconImage),
+            //     ),
+            //   ],
+            // ),
             Column(
               children: [
                 Row(
@@ -72,17 +72,17 @@ Widget poemFrame() {
                 ),
               ],
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: h * 0.52, right: w * 0.08),
-                  child: Image.asset(
-                    AssetRes.shareIconImage,
-                    width: w * 0.060,
-                  ),
-                )
-              ],
-            )
+            // Column(
+            //   children: [
+            //     Padding(
+            //       padding: EdgeInsets.only(top: h * 0.52, right: w * 0.08),
+            //       child: Image.asset(
+            //         AssetRes.shareIconImage,
+            //         width: w * 0.060,
+            //       ),
+            //     )
+            //   ],
+            // )
           ],
         )
       ],

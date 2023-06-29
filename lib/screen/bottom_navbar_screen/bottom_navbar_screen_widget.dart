@@ -56,7 +56,10 @@ Widget bottomNavBar() {
                                   onPressed: () => controller.onTapBottom(0),
                                   icon: Icon(controller.selectedIndex == 0
                                       ? Icons.home
-                                      : Icons.home_outlined)),
+                                      : Icons.home_outlined,
+                                    color: ColorRes.greenColor,
+                                  ),
+                              ),
                               commonTextWidget(text: StringRes.homeText)
                             ],
                           ),
@@ -66,7 +69,9 @@ Widget bottomNavBar() {
                                   onPressed: () => controller.onTapBottom(1),
                                   icon: Icon(controller.selectedIndex == 1
                                       ? Icons.bookmark
-                                      : Icons.bookmark_border)),
+                                      : Icons.bookmark_border,
+                                    color: ColorRes.greenColor,
+                                  )),
                               commonTextWidget(text: StringRes.bookmarkText)
                             ],
                           ),
@@ -78,9 +83,11 @@ Widget bottomNavBar() {
                               commonIconButton(
                                   onPressed: () => controller.onTapBottom(3),
                                   icon: Icon(controller.selectedIndex == 3
-                                      ? Icons.notifications
-                                      : Icons.notifications_none)),
-                              commonTextWidget(text: StringRes.notificationText)
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                    color: ColorRes.greenColor,
+                                  )),
+                              commonTextWidget(text: StringRes.favText)
                             ],
                           ),
                           Column(
@@ -89,7 +96,9 @@ Widget bottomNavBar() {
                                   onPressed: () => controller.onTapBottom(4),
                                   icon: Icon(controller.selectedIndex == 4
                                       ? Icons.person
-                                      : Icons.person_outline)),
+                                      : Icons.person_outline,
+                                    color: ColorRes.greenColor,
+                                  )),
                               commonTextWidget(text: StringRes.profileText)
                             ],
                           ),

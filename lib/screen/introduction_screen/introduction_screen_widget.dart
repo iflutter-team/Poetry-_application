@@ -5,6 +5,7 @@ import 'package:poetry/common/sizedbox_widget.dart';
 
 import '../../common/common_container.dart';
 import '../../common/text_widget.dart';
+import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
 import '../login_screen/login_screen.dart';
 import 'introduction_screen_controller.dart';
@@ -108,16 +109,28 @@ Widget row(){
                     return Row(
                       children: [
                         commonDot(
-                          index: 0,
-                          pageIndex: controller.pageIndex,
+                            index:  controller.index=0,
+                            pageIndex: controller.pageIndex,
+                            color: controller.index == controller.pageIndex
+                                ? ColorRes.whiteColor
+                                : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
                         ),
                         commonDot(
-                          index: 1,
-                          pageIndex: controller.pageIndex,
+                            index:  controller.index=1,
+                            pageIndex: controller.pageIndex,
+                            color:  controller.index == controller.pageIndex
+                                ? ColorRes.whiteColor
+                                : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
                         ),
                         commonDot(
-                          index: 2,
-                          pageIndex: controller.pageIndex,
+                            index:  controller.index=2,
+                            pageIndex: controller.pageIndex,
+                            color:  controller.index == controller.pageIndex
+                                ? ColorRes.whiteColor
+                                : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
                         ),
                       ],
                     );

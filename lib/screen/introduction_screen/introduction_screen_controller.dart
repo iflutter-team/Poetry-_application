@@ -5,6 +5,7 @@ import '../login_screen/login_screen.dart';
 
 class IntroductionScreenController extends GetxController {
   int pageIndex = 0;
+  int index = 0;
   PageController pageController = PageController();
 
   void introductionPageBottomButton() {

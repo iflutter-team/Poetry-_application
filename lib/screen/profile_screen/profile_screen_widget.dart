@@ -1,8 +1,5 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:poetry/common/common_container.dart';
 import 'package:poetry/common/text_widget.dart';
 import 'package:poetry/screen/profile_screen/profile_screen_controller.dart';
@@ -11,7 +8,6 @@ import '../../common/padding_widget.dart';
 import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
-import '../edit_profile/edit_profile_controller.dart';
 
 double w = Get.width;
 double h = Get.height;
@@ -143,11 +139,12 @@ Widget profileDataField() {
   );
 }
 
-Widget commonDisableTextFieldProfile({bool? enabled}) {
+Widget commonDisableTextFieldProfile({bool? enabled,void Function()? onTap,TextEditingController? controller}) {
   return SizedBox(
       height: h * 0.04,
       child: TextFormField(
         obscureText: false,
+        controller:controller ,
         enabled: enabled,
         style: const TextStyle(color: ColorRes.whiteColor),
         decoration: const InputDecoration(
@@ -159,5 +156,6 @@ Widget commonDisableTextFieldProfile({bool? enabled}) {
           isCollapsed: true,
           contentPadding: EdgeInsets.all(8),
         ),
+        onTap: onTap,
       ));
 }

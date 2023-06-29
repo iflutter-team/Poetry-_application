@@ -30,6 +30,8 @@ class HomeScreen extends StatelessWidget {
                 topPoetsList(context),
                 rowThreeWidget(),
                 famousBookList(context),
+                rowThreeWidget(),
+                topPoetsList(context),
                 sizedBoxWidget(height: h*0.10),
               ],
             ),

@@ -43,36 +43,17 @@ AppBar appBarWidget() {
         color: ColorRes.greenColor,
         fontSize: h * 0.024,
         fontWeight: FontWeight.bold),
-    actions: [
-      Image.asset(
-        AssetRes.homeAppBarEnglishImg,
-        width: w * 0.09,
-      ),
-      SizedBox(
-        width: w * 0.01,
-      ),
-      GetBuilder<HomeScreenController>(
-          id: 'switch',
-          builder: (controller) => FlutterSwitch(
-                toggleSize: h * 0.022,
-                height: h * 0.0300,
-                width: w * 0.1072,
-                activeColor: ColorRes.greenColor,
-                inactiveColor: ColorRes.switchInactiveColor,
-                value: controller.switchDemo,
-                onToggle: (value) {
-                  controller.switchWidget(value);
-                },
-              )),
-      SizedBox(
-        width: w * 0.01,
-      ),
-      Image.asset(
-        AssetRes.homeAppBarHindiImg,
-        width: w * 0.09,
-      ),
-      sizedBoxWidget(height: h * 0.10, width: w * 0.03),
-    ],
+     actions: [
+    //   Image.asset(
+    //     AssetRes.homeAppBarEnglishImg,
+    //     width: w * 0.09,
+    //   ),
+    //   SizedBox(
+    //     width: w * 0.01,
+    //   ),
+      const Icon(IconRes.favoriteIcon,color: ColorRes.greenColor,),
+       sizedBoxWidget(width: Get.width*0.05)
+     ],
   );
 }
 
@@ -101,16 +82,28 @@ Widget pageView() {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             commonDot(
-              index: 0,
+                index:  controller.index=0,
               pageIndex: controller.pageIndex,
+              color: controller.index == controller.pageIndex
+                  ? ColorRes.whiteColor
+                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
             ),
             commonDot(
-              index: 1,
+                index:  controller.index=1,
               pageIndex: controller.pageIndex,
+              color:  controller.index == controller.pageIndex
+                  ? ColorRes.whiteColor
+                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
             ),
             commonDot(
-              index: 2,
+                index:  controller.index=2,
               pageIndex: controller.pageIndex,
+              color:  controller.index == controller.pageIndex
+                  ? ColorRes.whiteColor
+                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
+
             ),
           ],
         );
@@ -369,7 +362,7 @@ Widget animatedContainer(BuildContext context) {
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
                 width: Get.width * 0.90,
-                height: 400,
+                height: 180,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -384,76 +377,76 @@ Widget animatedContainer(BuildContext context) {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white),
-                          ),
-                          child: const Icon(
-                            IconRes.notificationIcon,
-                            color: Colors.white,
-                            size: 30,
-                          ),
-                        ),
-                        sizedBoxWidget(
-                          width: w * 0.020,
-                        ),
-                        commonTextWidget(
-                            text: 'notification',
-                            color: Colors.white,
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold),
-                        const Spacer(),
-                        Switch(
-                          value: controller.containerSwitch,
-                          onChanged: controller.animatedContainerCondition,
-                          activeColor: Colors.white,
-                        ),
-                      ],
-                    ),
-                    sizedBoxWidget(
-                      height: h * 0.02,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.white),
-                          ),
-                          child: const Icon(
-                            IconRes.favoriteBorderIcon,
-                            color: Colors.white,
-                            size: 30,
-                          ),
-                        ),
-                        sizedBoxWidget(
-                          width: w * 0.020,
-                        ),
-                        commonTextWidget(
-                            text: 'Favorites',
-                            color: Colors.white,
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold),
-                        const Spacer(),
-                        const Icon(
-                          IconRes.arrowIcon,
-                          size: 22,
-                          color: Colors.white,
-                        )
-                      ],
-                    ),
-                    sizedBoxWidget(
-                      height: h * 0.020,
-                    ),
+                    // Row(
+                    //   children: [
+                    //     // Container(
+                    //     //   height: 50,
+                    //     //   width: 50,
+                    //     //   decoration: BoxDecoration(
+                    //     //     color: Colors.transparent,
+                    //     //     borderRadius: BorderRadius.circular(10),
+                    //     //     border: Border.all(color: Colors.white),
+                    //     //   ),
+                    //     //   child: const Icon(
+                    //     //     IconRes.notificationIcon,
+                    //     //     color: Colors.white,
+                    //     //     size: 30,
+                    //     //   ),
+                    //     // ),
+                    //     // sizedBoxWidget(
+                    //     //   width: w * 0.020,
+                    //     // ),
+                    //     // commonTextWidget(
+                    //     //     text: 'notification',
+                    //     //     color: Colors.white,
+                    //     //     fontSize: 19,
+                    //     //     fontWeight: FontWeight.bold),
+                    //     // const Spacer(),
+                    //     // Switch(
+                    //     //   value: controller.containerSwitch,
+                    //     //   onChanged: controller.animatedContainerCondition,
+                    //     //   activeColor: Colors.white,
+                    //     // ),
+                    //   ],
+                    // ),
+                    // sizedBoxWidget(
+                    //   height: h * 0.02,
+                    // ),
+                    // Row(
+                    //   children: [
+                    //     // Container(
+                    //     //   height: 50,
+                    //     //   width: 50,
+                    //     //   decoration: BoxDecoration(
+                    //     //     color: Colors.transparent,
+                    //     //     borderRadius: BorderRadius.circular(10),
+                    //     //     border: Border.all(color: Colors.white),
+                    //     //   ),
+                    //     //   child: const Icon(
+                    //     //     IconRes.favoriteBorderIcon,
+                    //     //     color: Colors.white,
+                    //     //     size: 30,
+                    //     //   ),
+                    //     // ),
+                    //     // sizedBoxWidget(
+                    //     //   width: w * 0.020,
+                    //     // ),
+                    //     // commonTextWidget(
+                    //     //     text: 'Favorites',
+                    //     //     color: Colors.white,
+                    //     //     fontSize: 19,
+                    //     //     fontWeight: FontWeight.bold),
+                    //     // const Spacer(),
+                    //     // const Icon(
+                    //     //   IconRes.arrowIcon,
+                    //     //   size: 22,
+                    //     //   color: Colors.white,
+                    //     // )
+                    //   ],
+                    // ),
+                    // sizedBoxWidget(
+                    //   height: h * 0.020,
+                    // ),
                     InkWell(
                       onTap: () {
                         showDialog(
@@ -480,126 +473,126 @@ Widget animatedContainer(BuildContext context) {
                                                     Colors.white12
                                                         .withOpacity(0)
                                                   ])),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  commonTextWidget(
-                                                      text: 'Language',
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ],
-                                              ),
-                                              const Divider(
-                                                thickness: 2,
-                                                color: Colors.white38,
-                                              ),
-                                              GetBuilder<HomeScreenController>(
-                                                id: 'radiobutton',
-                                                builder: (controller) {
-                                                  return Row(
-                                                    children: [
-                                                      Image.asset(
-                                                        AssetRes
-                                                            .homeAppBarEnglishImg,
-                                                        width: 25,
-                                                        color: Colors.white,
-                                                      ),
-                                                      sizedBoxWidget(
-                                                        width: w * 0.15,
-                                                      ),
-                                                      commonTextWidget(
-                                                          text: 'English',
-                                                          fontSize: 16,
-                                                          color: Colors.white,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                      const Spacer(),
-                                                      Radio(
-                                                          value: 'English',
-                                                          activeColor: ColorRes.whiteColor,
-                                                           fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
-                                                          groupValue: controller.gp,
-                                                          onChanged: controller
-                                                              .languageCondition)
-                                                    ],
-                                                  );
-                                                }
-                                              ),
-                                              GetBuilder<HomeScreenController>(
-                                                id: 'radiobutton',
-                                                builder: (controller) {
-                                                  return Row(
-                                                    children: [
-                                                      Image.asset(
-                                                        AssetRes.homeAppBarHindiImg,
-                                                        width: 25,
-                                                        color: Colors.white,
-                                                      ),
-                                                      sizedBoxWidget(
-                                                        width: w * 0.15,
-                                                      ),
-                                                      commonTextWidget(
-                                                          text: 'Hindi',
-                                                          fontSize: 16,
-                                                          color: Colors.white,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                      const Spacer(),
-                                                      Radio(
-                                                          value: 'Hindi',
-                                                          fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
-                                                          groupValue: controller.gp,
-                                                          activeColor: ColorRes.whiteColor,
-                                                          onChanged: controller
-                                                              .languageCondition)
-                                                    ],
-                                                  );
-                                                }
-                                              )
-                                            ],
-                                          ),
+                                          // child: Column(
+                                          //   children: [
+                                          //     Row(
+                                          //       children: [
+                                          //         commonTextWidget(
+                                          //             text: 'Language',
+                                          //             fontSize: 18,
+                                          //             color: Colors.white,
+                                          //             fontWeight:
+                                          //                 FontWeight.bold),
+                                          //       ],
+                                          //     ),
+                                          //     const Divider(
+                                          //       thickness: 2,
+                                          //       color: Colors.white38,
+                                          //     ),
+                                          //     GetBuilder<HomeScreenController>(
+                                          //       id: 'radiobutton',
+                                          //       builder: (controller) {
+                                          //         return Row(
+                                          //           children: [
+                                          //             Image.asset(
+                                          //               AssetRes
+                                          //                   .homeAppBarEnglishImg,
+                                          //               width: 25,
+                                          //               color: Colors.white,
+                                          //             ),
+                                          //             sizedBoxWidget(
+                                          //               width: w * 0.15,
+                                          //             ),
+                                          //             commonTextWidget(
+                                          //                 text: 'English',
+                                          //                 fontSize: 16,
+                                          //                 color: Colors.white,
+                                          //                 fontWeight:
+                                          //                     FontWeight.bold),
+                                          //             const Spacer(),
+                                          //             Radio(
+                                          //                 value: 'English',
+                                          //                 activeColor: ColorRes.whiteColor,
+                                          //                  fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
+                                          //                 groupValue: controller.gp,
+                                          //                 onChanged: controller
+                                          //                     .languageCondition)
+                                          //           ],
+                                          //         );
+                                          //       }
+                                          //     ),
+                                          //     GetBuilder<HomeScreenController>(
+                                          //       id: 'radiobutton',
+                                          //       builder: (controller) {
+                                          //         return Row(
+                                          //           children: [
+                                          //             Image.asset(
+                                          //               AssetRes.homeAppBarHindiImg,
+                                          //               width: 25,
+                                          //               color: Colors.white,
+                                          //             ),
+                                          //             sizedBoxWidget(
+                                          //               width: w * 0.15,
+                                          //             ),
+                                          //             commonTextWidget(
+                                          //                 text: 'Hindi',
+                                          //                 fontSize: 16,
+                                          //                 color: Colors.white,
+                                          //                 fontWeight:
+                                          //                     FontWeight.bold),
+                                          //             const Spacer(),
+                                          //             Radio(
+                                          //                 value: 'Hindi',
+                                          //                 fillColor: MaterialStateColor.resolveWith((states) => ColorRes.whiteColor),
+                                          //                 groupValue: controller.gp,
+                                          //                 activeColor: ColorRes.whiteColor,
+                                          //                 onChanged: controller
+                                          //                     .languageCondition)
+                                          //           ],
+                                          //         );
+                                          //       }
+                                          //     )
+                                          //   ],
+                                          // ),
                                         );
                                       })
                                     ]));
                       },
                       child: Row(
                         children: [
-                          Container(
-                            height: h * 0.06,
-                            width: w * 0.14,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: Colors.white),
-                            ),
-                            child: const Icon(
-                              IconRes.translateIcon,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                          ),
-                          sizedBoxWidget(
-                            width: w * 0.020,
-                          ),
-                          commonTextWidget(
-                              text: 'Language',
-                              color: Colors.white,
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold),
-                          const Spacer(),
-                          const Icon(
-                            IconRes.arrowIcon,
-                            size: 22,
-                            color: Colors.white,
-                          )
+                          // Container(
+                          //   height: h * 0.06,
+                          //   width: w * 0.14,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.transparent,
+                          //     borderRadius: BorderRadius.circular(10),
+                          //     border: Border.all(color: Colors.white),
+                          //   ),
+                          //   child: const Icon(
+                          //     IconRes.translateIcon,
+                          //     color: Colors.white,
+                          //     size: 30,
+                          //   ),
+                          // ),
+                          // sizedBoxWidget(
+                          //   width: w * 0.020,
+                          // ),
+                          // commonTextWidget(
+                          //     text: 'Language',
+                          //     color: Colors.white,
+                          //     fontSize: 19,
+                          //     fontWeight: FontWeight.bold),
+                          // const Spacer(),
+                          // const Icon(
+                          //   IconRes.arrowIcon,
+                          //   size: 22,
+                          //   color: Colors.white,
+                          // )
                         ],
                       ),
                     ),
                     sizedBoxWidget(
-                      height: h * 0.020,
+                      height: h * 0.010,
                     ),
                     Row(
                       children: [

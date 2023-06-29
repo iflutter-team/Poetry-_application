@@ -79,7 +79,7 @@ class LoginController extends GetxController {
           password.clear();
         }
         else{
-          Get.snackbar("Login Failed", "Enter valid UserName or Password");
+         // Get.snackbar("Login Failed", "Enter valid UserName or Password");
         }
       });
     } else {

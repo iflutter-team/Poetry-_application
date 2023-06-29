@@ -166,6 +166,7 @@ class StringRes {
   static const bookmarkText = "Bookmark";
   static const notificationText = "Notification";
   static const profileText = "Profile";
+  static const favText = "favorite";
 
   ///----------------------------addPoemScreen---------------------------------///
   static const addPoem = "Add Poem";
@@ -196,4 +197,9 @@ class StringRes {
 
   ///--------------EditProfile Screen----------------------///
   static const saveButtonText = "Save";
+
+  ///---------------followScreen-----------------------------///
+  static const arijitsinghText = "Arijit Singh";
+  static const followsText = "45M Followers";
+
 }

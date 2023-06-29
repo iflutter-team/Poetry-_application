@@ -5,6 +5,7 @@ import '../../common/animatedcontainerwidget.dart';
 import '../../common/common_container.dart';
 import '../../common/text_widget.dart';
 import '../../utils/asset_res.dart';
+import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
 import 'bookmark_screen_controller.dart';
 
@@ -43,14 +44,14 @@ Widget poemFrameOfPageView() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: w * 0.095, bottom: h * 0.27),
-                  child: Image.asset(AssetRes.collectionIconImage),
-                ),
-              ],
-            ),
+            // Column(
+            //   children: [
+            //     // Padding(
+            //     //   padding: EdgeInsets.only(left: w * 0.095, bottom: h * 0.27),
+            //     //   child: Image.asset(AssetRes.collectionIconImage),
+            //     // ),
+            //   ],
+            // ),
             Column(
               children: [
                 Row(
@@ -90,17 +91,17 @@ Widget poemFrameOfPageView() {
                 ),
               ],
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: h * 0.56, right: w * 0.09),
-                  child: Image.asset(
-                    AssetRes.shareIconImage,
-                    width: w * 0.060,
-                  ),
-                )
-              ],
-            )
+            // Column(
+            //   children: [
+            //     Padding(
+            //       padding: EdgeInsets.only(top: h * 0.56, right: w * 0.09),
+            //       child: Image.asset(
+            //         AssetRes.shareIconImage,
+            //         width: w * 0.060,
+            //       ),
+            //     )
+            //   ],
+            // )
           ],
         )
       ],
@@ -118,16 +119,27 @@ Widget pageViewOfBookmark() {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               commonDot(
-                index: 0,
-                pageIndex: controller.pageIndex,
+                  index:  controller.index=0,
+                  pageIndex: controller.pageIndex,
+                  color: controller.index == controller.pageIndex
+                      ? ColorRes.bookmarkColor
+                      : ColorRes.bookmarkColor.withOpacity(0.5)
+
               ),
               commonDot(
-                index: 1,
-                pageIndex: controller.pageIndex,
+                  index:  controller.index=1,
+                  pageIndex: controller.pageIndex,
+                  color:  controller.index == controller.pageIndex
+                      ? ColorRes.bookmarkColor
+                      : ColorRes.bookmarkColor.withOpacity(0.5)
+
               ),
               commonDot(
-                index: 2,
-                pageIndex: controller.pageIndex,
+                  index:  controller.index=2,
+                  pageIndex: controller.pageIndex,
+                  color:  controller.index == controller.pageIndex
+                      ? ColorRes.bookmarkColor
+                      : ColorRes.bookmarkColor.withOpacity(0.5)
               ),
             ],
           ),

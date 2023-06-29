@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/circleavatar_widget.dart';
-import 'dart:io';
 import '../../common/common_container.dart';
 import '../../common/login_signup_button.dart';
 import '../../common/text_widget.dart';
@@ -41,7 +40,7 @@ Widget profilePhoto() {
   );
 }
 
-Widget editDataField() {
+Widget editDataField(BuildContext context) {
   return commonContainer(
     margin: EdgeInsets.all(h * 0.03),
     padding: EdgeInsets.all(h * 0.02),
@@ -93,7 +92,13 @@ Widget editDataField() {
           color: ColorRes.formStringColor,
           fontSize: 13,
         ),
-        commonDisableTextFieldProfile()
+        GetBuilder<EditProfileController>(
+          id: 'dateAndTimePicker',
+            builder: (controller) {
+          return commonDisableTextFieldProfile(
+              onTap:  ()=>controller.dateAndTimePicker(context),
+              controller: controller.dateController);
+        })
       ],
     ),
   );

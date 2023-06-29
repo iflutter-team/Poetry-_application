@@ -62,4 +62,8 @@ class AssetRes {
 
   ///-----------------------notificationScreen----------------------------------///
   static const notificationImage = "${imageBase}notification.png";
+
+  ///-----------------------followScreen---------------------------------------///
+  static const arijitSinghImage = "${imageBase}arijitsingh.png";
+
 }

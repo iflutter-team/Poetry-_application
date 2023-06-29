@@ -25,7 +25,7 @@ class EditProfile extends StatelessWidget {
         actionIcon: Icons.favorite, onTap: () { Get.back(); },
       ),
       body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+       // physics: const NeverScrollableScrollPhysics(),
         child: Center(
           child: Column(
             children: [
@@ -33,7 +33,7 @@ class EditProfile extends StatelessWidget {
                 height: h * 0.03,
               ),
               profilePhoto(),
-              editDataField(),
+              editDataField(context),
               SizedBox(
                 height: h * 0.05,
               ),

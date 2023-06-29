@@ -50,7 +50,7 @@ class AddPoemScreen extends StatelessWidget {
             sizedBoxWidget(
               height: h*0.01,
             ),
-            rowWidget(),
+           // rowWidget(),
             sizedBoxWidget(
               height: h * 0.116,
             ),

@@ -8,6 +8,7 @@ class HomeScreenController extends GetxController {
   bool switchDemo = true;
   bool selected = false;
   int pageIndex = 0;
+  int index = 0;
   bool containerSwitch=false;
   String english = "English";
   String hindi = "Hindi";
