@@ -31,41 +31,40 @@ class SignUpScreen extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Container(
               alignment: Alignment.center,
-              child: Form(
-                key: controller.signupKey,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [signScreenArrow()],
-                    ),
-                    sizedBoxWidget(
-                      height: h * 0.0304,
-                    ),
-                    poetryPageImage(height: h * 0.260),
-                    sizedBoxWidget(
-                      height: h * 0.0304,
-                    ),
-                    commonTextWidget(
-                        text: StringRes.signUpString,
-                        fontSize: 18,
-                        color: Colors.white),
-                    sizedBoxWidget(
-                      height: h * 0.0299,
-                    ),
-                    fullNameTextFieldWidget(),
-                    sizedBoxWidget(height: h * 0.0299),
-                    signUpEmailTextFieldWidget(),
-                    sizedBoxWidget(
-                      height: h * 0.0299,
-                    ),
-                    signUpPassTextFieldWidget(),
-                    termsConditions(context),
-                    sizedBoxWidget(
-                      height: h * 0.033,
-                    ),
-                    signupButton(),
-                  ],
-                ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [signScreenArrow()],
+                  ),
+                  sizedBoxWidget(
+                    height: h * 0.0304,
+                  ),
+                  poetryPageImage(height: h * 0.260),
+                  sizedBoxWidget(
+                    height: h * 0.0304,
+                  ),
+                  commonTextWidget(
+                      text: StringRes.signUpString,
+                      fontSize: 18,
+                      color: Colors.white),
+                  sizedBoxWidget(
+                    height: h * 0.0299,
+                  ),
+                  fullNameTextFieldWidget(),
+                  sizedBoxWidget(height: h * 0.0299),
+                  userNameTextFieldWidget(),
+                  sizedBoxWidget(height: h * 0.0299),
+                  signUpEmailTextFieldWidget(),
+                  sizedBoxWidget(
+                    height: h * 0.0299,
+                  ),
+                  signUpPassTextFieldWidget(),
+                  termsConditions(context),
+                  sizedBoxWidget(
+                    height: h * 0.033,
+                  ),
+                  signupButton(),
+                ],
               ),
             ),
           ),

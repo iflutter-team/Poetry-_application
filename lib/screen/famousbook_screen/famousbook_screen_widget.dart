@@ -6,11 +6,18 @@ import 'package:poetry/common/text_widget.dart';
 import 'package:poetry/utils/string_res.dart';
 
 import '../../common/sizedbox_widget.dart';
-import '../../utils/asset_res.dart';
 import '../../utils/color_res.dart';
 import 'famousbook_screen_controller.dart';
 
-Widget famousBookListview() {
+Widget famousBookListview(
+    {double? containerHeight,
+    double? containerWidth,
+    double? bookHeight,
+    double? bookWidth,
+    Widget? child,
+    ImageProvider? lineImage,
+    ImageProvider? favoriteImage,
+    ImageProvider? shareImage}) {
   double w = Get.width;
   double h = Get.height;
   return GetBuilder<FamousBookController>(builder: (controller) {
@@ -28,8 +35,8 @@ Widget famousBookListview() {
               dashPattern: const [5, 3],
               radius: const Radius.circular(20),
               child: commonContainer(
-                height: Get.width * 0.560,
-                width: Get.height * 0.400,
+                height: containerHeight,
+                width: containerWidth,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,12 +45,8 @@ Widget famousBookListview() {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: (){},
-                          child: Image.asset(
-                            AssetRes.saveImage,
-                            // height: 30,
-                            width: w*0.05,
-                          ),
+                          onTap: () {},
+                          child: child,
                         ),
                       ],
                     ),
@@ -52,14 +55,13 @@ Widget famousBookListview() {
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: commonContainer(
-                            height: 139,
-                            width: 95,
+                            height: bookHeight,
+                            width: bookWidth,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 image: AssetImage(
-                                  StringRes.famousBookData[index]
-                                      ['image'],
+                                  StringRes.famousBookData[index]['image'],
                                 ),
                                 fit: BoxFit.fill,
                               ),
@@ -69,8 +71,8 @@ Widget famousBookListview() {
                         sizedBoxWidget(
                           width: w * 0.04,
                         ),
-                        Image.asset(
-                          AssetRes.lineImage,
+                        Image(
+                          image: lineImage!,
                           height: h * 0.14,
                         ),
                         sizedBoxWidget(
@@ -87,7 +89,7 @@ Widget famousBookListview() {
                                 children: [
                                   TableRow(children: [
                                     commonTextWidget(
-                                      text:StringRes.book,
+                                      text: StringRes.book,
                                       fontSize: 13,
                                       color: ColorRes.whiteColor,
                                       fontWeight: FontWeight.bold,
@@ -98,8 +100,7 @@ Widget famousBookListview() {
                                       fontWeight: FontWeight.bold,
                                     ),
                                     commonTextWidget(
-                                      text: StringRes
-                                              .famousBookData[index]
+                                      text: StringRes.famousBookData[index]
                                           ['name'],
                                       fontSize: 14,
                                       color: ColorRes.famousBookColor,
@@ -118,8 +119,7 @@ Widget famousBookListview() {
                                       fontWeight: FontWeight.bold,
                                     ),
                                     commonTextWidget(
-                                      text: StringRes
-                                              .famousBookData[index]
+                                      text: StringRes.famousBookData[index]
                                           ['authername'],
                                       fontSize: 14,
                                       color: ColorRes.famousBookColor,
@@ -137,8 +137,7 @@ Widget famousBookListview() {
                                       fontWeight: FontWeight.bold,
                                     ),
                                     commonTextWidget(
-                                      text: StringRes
-                                              .famousBookData[index]
+                                      text: StringRes.famousBookData[index]
                                           ['PubilshedDate'],
                                       fontSize: 14,
                                       color: ColorRes.famousBookColor,
@@ -158,9 +157,9 @@ Widget famousBookListview() {
                         children: [
                           InkWell(
                             onTap: () {},
-                            child: Image.asset(
-                              AssetRes.favoriteImage,
-                              width: w*0.06,
+                            child: Image(
+                              image: favoriteImage!,
+                              width: w * 0.06,
                             ),
                           ),
                           sizedBoxWidget(
@@ -168,12 +167,11 @@ Widget famousBookListview() {
                           ),
                           InkWell(
                             onTap: () {},
-                            child: Image.asset(
-                              AssetRes.shareImage,
-                              width: w*0.06,
+                            child: Image(
+                              image: shareImage!,
+                              width: w * 0.06,
                             ),
                           ),
-
                         ],
                       ),
                     ),
@@ -187,22 +185,3 @@ Widget famousBookListview() {
     );
   });
 }
-
-// Widget famousBookListview() {
-//   double h=Get.height;
-//   double w=Get.width;
-//   return GetBuilder<FamousBookController>(
-//     builder: (controller) {
-//       return Expanded(
-//         child: ListView.builder(
-//           itemCount: 4,
-//           itemBuilder: (context, index) => commonContainer(
-//             height: h*0.240,
-//             color: ColorRes.whiteColor,
-//             width: double.infinity,
-//           ),
-//         ),
-//       );
-//     }
-//   );
-// }

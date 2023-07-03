@@ -13,5 +13,6 @@ class IconRes{
   static const logoutIcon=   Icons.logout;
   static const favoriteIcon=   Icons.favorite;
   static const backArrowIcon=   Icons.arrow_back_sharp;
+  static const moreIcon=   Icons.more_horiz;
 
 }

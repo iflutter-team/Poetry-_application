@@ -2,7 +2,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/screen/forgetpassword_screen/forgetpassword_screen.dart';
-import 'package:poetry/screen/home_screen/home_screen.dart';
 import 'package:poetry/screen/signup_screen/signup_screen.dart';
 
 import '../../common/termscondition.dart';
@@ -21,7 +20,7 @@ class LoginController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    loginButton();
+    // loginButton();
     // email.clear();
     // password.clear();
     //

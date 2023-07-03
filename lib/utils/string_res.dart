@@ -1,4 +1,5 @@
 import 'asset_res.dart';
+import 'icon_res.dart';
 
 class StringRes {
   ///--------------introductionScreen------------------///
@@ -20,6 +21,7 @@ class StringRes {
   ///--------------signUpScreen----------------------///
   static const signUpString = "Sign Up";
   static const fullNameString = "Full Name";
+  static const usernameString = "User Name";
   static const agreedString = "Agreed To";
   static const termsAndConditionString = "Terms & Conditions";
   static const allTerms = 'There are many variations of passages oLorem '
@@ -199,7 +201,46 @@ class StringRes {
   static const saveButtonText = "Save";
 
   ///---------------followScreen-----------------------------///
-  static const arijitsinghText = "Arijit Singh";
+  static const pabloNerudaText = "Pablo Neruda";
   static const followsText = "45M Followers";
+  static const followText = "Follow";
+  static const unFollowText = "UnFollow";
 
+  static const List<Map> followList = [
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.pabloNeruda1Image,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.pabloNeruda1Image,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+  ];
 }

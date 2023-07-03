@@ -65,5 +65,6 @@ class AssetRes {
 
   ///-----------------------followScreen---------------------------------------///
   static const arijitSinghImage = "${imageBase}arijitsingh.png";
+  static const pabloNeruda1Image = "${imageBase}PabloNeruda1.png";
 
 }

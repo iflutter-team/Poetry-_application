@@ -26,8 +26,25 @@ Widget fullNameTextFieldWidget() {
       builder: (controller) {
         return commonTextField(
           controller: controller.fullName,
-          validator: controller.usernameConditon,
+          //validator: controller.fullNameCondition,
           hintTextString: StringRes.fullNameString,
+          width: w * 0.893,
+          height: h * 0.067,
+          obscureText: false,
+        );
+      });
+}
+
+Widget userNameTextFieldWidget() {
+  double h = Get.height;
+  double w = Get.width;
+  return GetBuilder<SignUpController>(
+      id: 'username',
+      builder: (controller) {
+        return commonTextField(
+          controller: controller.username,
+          //validator: controller.userNameCondition,
+          hintTextString: StringRes.usernameString,
           width: w * 0.893,
           height: h * 0.067,
           obscureText: false,
@@ -39,15 +56,25 @@ Widget signUpEmailTextFieldWidget() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<SignUpController>(
-      id: 'signupEmail',
+      id: 'validation',
       builder: (controller) {
-        return commonTextField(
-          controller: controller.signupEmail,
-          validator: controller.signupEmailCondition,
-          hintTextString: StringRes.emailString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: false,
+        return Column(
+          children: [
+            commonTextField(
+              controller: controller.signupEmail,
+              //validator: controller.signupEmailCondition,
+              hintTextString: StringRes.emailString,
+              width: w * 0.893,
+              height: h * 0.067,
+              obscureText: false,
+              // onChanged: controller.signup,
+            ),
+            controller.emailerror != null
+                ? commonTextWidget(
+                    text: controller.emailerror ?? "",
+                    color: ColorRes.whiteColor)
+                : sizedBoxWidget(),
+          ],
         );
       });
 }
@@ -56,11 +83,11 @@ Widget signUpPassTextFieldWidget() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<SignUpController>(
-      id: 'forGetPassword',
+      id: 'validation',
       builder: (controller) {
         return commonTextField(
           controller: controller.signupPassword,
-          validator: controller.signupPassWordCondition,
+          //validator: controller.signupPassWordCondition,
           suffixIcon: iconWidget(
               onPressed: controller.forGetPassSuFix,
               icon: Icon(

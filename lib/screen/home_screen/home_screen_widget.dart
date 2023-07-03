@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:poetry/common/common_container.dart';
 import 'package:poetry/common/common_row.dart';
@@ -558,7 +557,7 @@ Widget animatedContainer(BuildContext context) {
                                       })
                                     ]));
                       },
-                      child: Row(
+                      child: const Row(
                         children: [
                           // Container(
                           //   height: h * 0.06,

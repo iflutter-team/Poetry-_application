@@ -26,5 +26,5 @@ class ColorRes {
   static const pageviewOrangeColor = Colors.orange;
 
   ///------------------bookmark-------------///
-  static const bookmarkColor=Color(0xff0F5D768);
+  static const bookmarkColor=Color(0xff0f5d768);
 }

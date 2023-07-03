@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/screen/home_screen/home_screen_controller.dart';
 
-import '../utils/color_res.dart';
-
 HomeScreenController homeScreenController =Get.find<HomeScreenController>();
 
 Widget commonDot({

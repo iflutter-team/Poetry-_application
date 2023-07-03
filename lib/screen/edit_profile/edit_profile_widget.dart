@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poetry/common/circleavatar_widget.dart';
 import '../../common/common_container.dart';
 import '../../common/login_signup_button.dart';
 import '../../common/text_widget.dart';

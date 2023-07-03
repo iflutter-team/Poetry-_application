@@ -7,10 +7,12 @@ Widget commonTextField(
     TextEditingController? controller,
     String? Function(dynamic val)? validator,
     required bool obscureText,
+      void Function(String)? onChanged,
     Widget? suffixIcon,
     String? hintTextString,
     InputDecoration? decoration,
-    bool? enabled}) {
+    bool? enabled,
+   }) {
   return SizedBox(
     width: width,
     height: height,
@@ -30,6 +32,7 @@ Widget commonTextField(
           border: InputBorder.none,
           suffixIcon: suffixIcon,
         ),
+        onChanged: onChanged,
         obscureText: obscureText,
         style: const TextStyle(color: Colors.white),
       ),
