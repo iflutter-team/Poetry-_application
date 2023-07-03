@@ -8,6 +8,7 @@ import 'common_icon.dart';
 
 PreferredSizeWidget commonAppbar(BuildContext context,
     {Color? backgroundColor,
+    Color? foregroundColor,
       required void Function()? onTap,
     IconData? icon,
     Color? color,
@@ -19,6 +20,7 @@ PreferredSizeWidget commonAppbar(BuildContext context,
   double w = Get.width;
   return AppBar(
     backgroundColor: backgroundColor,
+    foregroundColor: foregroundColor,
     leading: InkWell(
         onTap:onTapBack,
         child: commonIcon(

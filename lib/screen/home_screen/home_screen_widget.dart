@@ -19,6 +19,7 @@ import 'home_screen_controller.dart';
 
 double h = Get.height;
 double w = Get.width;
+
 AppBar appBarWidget() {
   return AppBar(
     centerTitle: true,
@@ -42,17 +43,20 @@ AppBar appBarWidget() {
         color: ColorRes.greenColor,
         fontSize: h * 0.024,
         fontWeight: FontWeight.bold),
-     actions: [
-    //   Image.asset(
-    //     AssetRes.homeAppBarEnglishImg,
-    //     width: w * 0.09,
-    //   ),
-    //   SizedBox(
-    //     width: w * 0.01,
-    //   ),
-      const Icon(IconRes.favoriteIcon,color: ColorRes.greenColor,),
-       sizedBoxWidget(width: Get.width*0.05)
-     ],
+    actions: [
+      //   Image.asset(
+      //     AssetRes.homeAppBarEnglishImg,
+      //     width: w * 0.09,
+      //   ),
+      //   SizedBox(
+      //     width: w * 0.01,
+      //   ),
+      const Icon(
+        IconRes.favoriteIcon,
+        color: ColorRes.greenColor,
+      ),
+      sizedBoxWidget(width: Get.width * 0.05)
+    ],
   );
 }
 
@@ -81,47 +85,38 @@ Widget pageView() {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             commonDot(
-                index:  controller.index=0,
-              pageIndex: controller.pageIndex,
-              color: controller.index == controller.pageIndex
-                  ? ColorRes.whiteColor
-                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
-
-            ),
+                index: controller.index = 0,
+                pageIndex: controller.pageIndex,
+                color: controller.index == controller.pageIndex
+                    ? ColorRes.whiteColor
+                    : ColorRes.animatedContainerExpandColor.withOpacity(0.5)),
             commonDot(
-                index:  controller.index=1,
-              pageIndex: controller.pageIndex,
-              color:  controller.index == controller.pageIndex
-                  ? ColorRes.whiteColor
-                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
-
-            ),
+                index: controller.index = 1,
+                pageIndex: controller.pageIndex,
+                color: controller.index == controller.pageIndex
+                    ? ColorRes.whiteColor
+                    : ColorRes.animatedContainerExpandColor.withOpacity(0.5)),
             commonDot(
-                index:  controller.index=2,
-              pageIndex: controller.pageIndex,
-              color:  controller.index == controller.pageIndex
-                  ? ColorRes.whiteColor
-                  : ColorRes.animatedContainerExpandColor.withOpacity(0.5)
-
-            ),
+                index: controller.index = 2,
+                pageIndex: controller.pageIndex,
+                color: controller.index == controller.pageIndex
+                    ? ColorRes.whiteColor
+                    : ColorRes.animatedContainerExpandColor.withOpacity(0.5)),
           ],
         );
       });
 }
 
-Widget rowWidget() {
+Widget popularCategoriesRow() {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
         text: StringRes.popularCategories,
-        width: w * 0.38,
         onPressed: () {},
         onPressedView: controller.viewAllCondition);
   });
 }
 
-Widget popularCategoriesList(
-  BuildContext context,
-) {
+Widget popularCategoriesList(BuildContext context) {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
       height: h * 0.700,
@@ -185,13 +180,10 @@ Widget popularCategoriesList(
   });
 }
 
-Widget rowTwoWidget() {
+Widget topPoetsRow() {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
-        text: StringRes.topPoets,
-        width: w * 0.55,
-        onPressed: () {},
-        onPressedView: () {});
+        text: StringRes.topPoets, onPressed: () {}, onPressedView: () {});
   });
 }
 
@@ -252,20 +244,17 @@ Widget topPoetsList(BuildContext context) {
   );
 }
 
-Widget rowThreeWidget() {
+Widget famousBookRow() {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
       text: StringRes.famousBook,
-      width: w * 0.48,
       onPressed: controller.famousBookCondition,
       onPressedView: () {},
     );
   });
 }
 
-Widget famousBookList(
-  BuildContext context,
-) {
+Widget famousBookList(BuildContext context) {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
       height: h * 0.700,
@@ -325,6 +314,16 @@ Widget famousBookList(
           ),
         ),
       ),
+    );
+  });
+}
+
+Widget AutherYouMostLikeRow() {
+  return GetBuilder<HomeScreenController>(builder: (controller) {
+    return commonRow(
+      text: StringRes.autherList,
+      onPressed: controller.famousBookCondition,
+      onPressedView: controller.onPressedViewOfAutherScreen,
     );
   });
 }
@@ -627,7 +626,7 @@ Widget animatedContainer(BuildContext context) {
                       ],
                     ),
                     sizedBoxWidget(
-                      height: h * 0.020,
+                      height: h * 0.015,
                     ),
                     GestureDetector(
                       onTap: () {},
@@ -671,4 +670,47 @@ Widget animatedContainer(BuildContext context) {
           ),
         );
       });
+}
+
+Widget ListOfAuther() {
+  return SizedBox(
+    height: h * 0.1739,
+    width: w * 0.9926,
+    child: ListView.builder(
+      physics: BouncingScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      itemCount: 10,
+      itemBuilder: (BuildContext context, int index) {
+        return Stack(children: [
+          Container(
+            // height: 155,
+            child: Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                            'assets/image/Nikhileswar-Sahitya-Akdemi-ProfilePic.jpg'),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 5,),
+                Text(
+                  'Nikhileshwar',
+                  style: TextStyle(
+                      fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ]);
+      },
+    ),
+  );
 }

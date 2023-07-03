@@ -5,7 +5,9 @@ import 'package:poetry/common/text_widget.dart';
 import '../utils/color_res.dart';
 import '../utils/string_res.dart';
 
-Widget commonRow({required String text,required double width,required void Function()? onPressed,required void Function()? onPressedView}) {
+Widget commonRow(
+    {required String text, required void Function()? onPressed,
+    required void Function()? onPressedView}) {
   return Column(
     children: [
       Row(
@@ -18,7 +20,7 @@ Widget commonRow({required String text,required double width,required void Funct
                 fontWeight: FontWeight.bold,
                 color: ColorRes.whiteColor),
           ),
-          sizedBoxWidget(width:width),
+          Spacer(),
           TextButton(
             onPressed: onPressedView,
             child: commonTextWidget(

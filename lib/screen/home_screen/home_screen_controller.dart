@@ -3,6 +3,7 @@ import 'package:poetry/screen/famousbook_screen/famousbook_screen.dart';
 import 'package:poetry/screen/view_screen/view_screen.dart';
 
 import '../../utils/asset_res.dart';
+import '../all_auther_profile/all_auther_screen.dart';
 
 class HomeScreenController extends GetxController {
   bool switchDemo = true;
@@ -37,6 +38,9 @@ class HomeScreenController extends GetxController {
 
   void viewAllCondition(){
     Get.to(const ViewScreen());
+  }
+  void onPressedViewOfAutherScreen(){
+    Get.to(const AllAutherScreen());
   }
 
   void famousBookCondition(){
