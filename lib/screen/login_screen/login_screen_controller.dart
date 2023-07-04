@@ -69,11 +69,11 @@ class LoginController extends GetxController {
       print(userdata);
       userdata.forEach((element) async {
         if (element['Email']==email.text && element['Password']==password.text) {
-          await termsAndConditionDialog(
-          acceptOnPressed: () => Get.offAll(const BottomNavBarSrceen()),
-          declineOnPressed: () {
-            Get.off(const BottomNavBarSrceen());
-          });
+          // await termsAndConditionDialog(
+          // acceptOnPressed: () => Get.offAll(const BottomNavBarSrceen()),
+          // declineOnPressed: () {
+             Get.off(()=>const BottomNavBarSrceen());
+          // });
           email.clear();
           password.clear();
         }
@@ -89,7 +89,7 @@ class LoginController extends GetxController {
   }
 
   void account() {
-    Get.to(SignUpScreen());
+    Get.to(()=>SignUpScreen());
   }
 
   void backArrow() {

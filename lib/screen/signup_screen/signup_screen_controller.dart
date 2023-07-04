@@ -8,8 +8,6 @@ import '../../model/register_model.dart';
 import '../login_screen/login_screen.dart';
 
 class SignUpController extends GetxController {
-  // GlobalKey<FormState> signupKey = GlobalKey<FormState>();
-  // GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool signupVisiBal = true;
   bool termsConditionsAgreedCheckbox = false;
 
@@ -34,22 +32,45 @@ class SignUpController extends GetxController {
   void signUpBackArrow() {
     Get.back();
   }
+  void forGetPassSuFix() {
+    signupVisiBal = !signupVisiBal;
+    update(['validation']);
+  }
 
+  String? fullError;
   String? fullNameCondition(val) {
-    return val!.isEmpty ? "Please enter username" : null;
+    if(val==null||val.isEmpty){
+      fullError="Enter Name";
+    }else{
+      fullError=null;
+    }
+    update(['validation']);
+
   }
+  String? userError;
   String? userNameCondition(val) {
-    return val!.isEmpty ? "Please enter username" : null;
+   // return val!.isEmpty ? "Please enter username" : null;
+    if(val==null||val.isEmpty){
+      userError="Enter User";
+    }
+    // else if(!GetUtils.isUsername(val)){
+    //   userError="Enter Valid User";
+    // }
+    else{
+      userError=null;
+    }
+    update(['validation']);
   }
 
-  String? signupEmailCondition(val) {
-    update(['email']);
-    bool emailValid = RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(val!);
+  // String? signupEmailCondition(val) {
+  //   update(['email']);
+  //   bool emailValid = RegExp(
+  //           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+  //       .hasMatch(val!);
+  //
+  //   return emailValid ? null : 'Please Enter Valid Email Address';
+  // }
 
-    return emailValid ? null : 'Please Enter Valid Email Address';
-  }
 
   // String? signupPassWordCondition(val) {
   //   // update(['password']);
@@ -59,76 +80,86 @@ class SignUpController extends GetxController {
   //       ? null
   //       : 'contain atLeast one Capital Letter, Small Letters, Numbers & a special character ';
   // }
-  String? emailerror;
-  void signup(String? value){
+  String? emailError;
+  void signupEmailCondition(String? value){
     if(value==null||value.isEmpty){
-      emailerror="Enter Email";
+      emailError="Enter Email";
     }else if(!GetUtils.isEmail(value)){
-      emailerror="Enter Valid Email";
+      emailError="Enter Valid Email";
     }else{
-      emailerror=null;
+      emailError=null;
+    }
+    update(['validation']);
+  }
+  String? passError;
+  String? signupPassCondition(String? value){
+    // if(value==null||value.isEmpty){
+    //   passError="Enter Password";
+    // }else if(!GetUtils.isAlphabetOnly(value)){
+    //   passError="Enter Valid Password";
+    // }else{
+    //   passError=null;
+    // }
+    if(value!.length<=6){
+      return passError="Enter Password Must be six Letter";
+    }else{
+      passError=null;
+    }
+    update(['validation']);
+   // return null;
+  }
+
+
+  Future<void> signupButton() async {
+    fullNameCondition(fullName.text);
+    signupEmailCondition(signupEmail.text);
+    userNameCondition(username.text);
+    signupPassCondition(signupPassword.text);
+  //userSignUp();
+    if(fullError==null && emailError==null && userError==null && passError==null ){
+      // await termsAndConditionDialog(acceptOnPressed: (){
+      //   print("i accept terms and condition");
+      //   termsConditionsAgreedCheckbox = true;
+      //   print(termsConditionsAgreedCheckbox);
+      //   update(['chkBoxCondition', 'checked']);
+      //   Get.back();
+      // }, declineOnPressed: (){
+      //   print("i decline terms and condition");
+      //   termsConditionsAgreedCheckbox = false;
+      //   print(termsConditionsAgreedCheckbox);
+      //   update(['chkBoxCondition', 'checked']);
+      //   Get.back();
+      // });
+      if (termsConditionsAgreedCheckbox == true) {
+        //print(termsConditionsAgreedCheckbox);
+       await FirebaseServices.addData('Person', {
+          'FullName': fullName.text,
+          'username': username.text,
+          'Email': signupEmail.text,
+          'Password': signupPassword.text
+        });
+        Get.back();
+        fullName.clear();
+        username.clear();
+        signupEmail.clear();
+        signupPassword.clear();
+        termsConditionsAgreedCheckbox = false;
+
+      }
+    }
+    else{
+      Get.snackbar('signup fail', 'Enter valid User');
     }
     update(['validation']);
   }
 
 
-  void forGetPassSuFix() {
-    signupVisiBal = !signupVisiBal;
-    update(['forGetPassword']);
-  }
-
-  Future<void> signupButton() async {
-    signup(signupEmail.text);
-    // if (signupKey.currentState!.validate()) {
-    //  await termsAndConditionDialog(acceptOnPressed: (){
-    //     print("i accept terms and condition");
-    //     termsConditionsAgreedCheckbox = true;
-    //     print(termsConditionsAgreedCheckbox);
-    //     update(['chkBoxCondition', 'checked']);
-    //     Get.back();
-    //   }, declineOnPressed: (){
-    //     print("i decline terms and condition");
-    //     termsConditionsAgreedCheckbox = false;
-    //     print(termsConditionsAgreedCheckbox);
-    //     update(['chkBoxCondition', 'checked']);
-    //     Get.back();
-    //   });
-    //   if (termsConditionsAgreedCheckbox = true) {
-    //     print(termsConditionsAgreedCheckbox);
-    //     FirebaseServices.addData('Person', {
-    //       'FullName': fullName.text,
-    //       'username': username.text,
-    //       'Email': signupEmail.text,
-    //       'Password': signupPassword.text
-    //     });
-    //     Get.to(LoginScreen());
-    //     fullName.clear();
-    //     username.clear();
-    //     signupEmail.clear();
-    //     signupPassword.clear();
-    //     termsConditionsAgreedCheckbox = false;
-    //   }
-    // } else {
-    //   Get.snackbar('SignUp Failed', 'Fill The Information',
-    //       backgroundColor: Colors.white30);
-    // }
-  // userSignUp();
-    if(emailerror==null){
-      Get.to(LoginScreen());
-    }else{
-      Get.snackbar('signup fail', 'Enter valid User');
-    }
-    update(['signupButton', 'chkBoxCondition', 'checked']);
-  }
-
   String? termsAndCondition(agreedToChecked) {
     termsConditionsAgreedCheckbox = !termsConditionsAgreedCheckbox;
-    update(['checked']);
+    update(['validation']);
     return null;
   }
-void sign(){
-    Get.to(LoginScreen());
-}
+
   Future<void> chkBoxCondition() async {
     await termsAndConditionDialog(acceptOnPressed: () {
       print("i accept terms and condition");

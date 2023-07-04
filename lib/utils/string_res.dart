@@ -1,4 +1,5 @@
 import 'asset_res.dart';
+import 'icon_res.dart';
 
 class StringRes {
   ///--------------introductionScreen------------------///
@@ -245,5 +246,6 @@ class StringRes {
 
 ///---------------followScreen-----------------------------///
   static const allAutherScreenTitleText="Auther";
+  static const autherList="autherList";
 
 }

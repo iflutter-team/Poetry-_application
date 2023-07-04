@@ -22,15 +22,29 @@ Widget fullNameTextFieldWidget() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<SignUpController>(
-      id: 'fullName',
+      id: 'validation',
       builder: (controller) {
-        return commonTextField(
-          controller: controller.fullName,
-          //validator: controller.fullNameCondition,
-          hintTextString: StringRes.fullNameString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: false,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            commonTextField(
+              controller: controller.fullName,
+              //validator: controller.fullNameCondition,
+              hintTextString: StringRes.fullNameString,
+              width: w * 0.893,
+              height: h * 0.067,
+              obscureText: false,
+            ),
+            sizedBoxWidget(
+              height: Get.height*0.01,
+            ),
+            controller.fullError != null
+                ? commonTextWidget(
+                text: controller.fullError ?? "",
+                color: ColorRes.errorColor)
+                : sizedBoxWidget(),
+          ],
         );
       });
 }
@@ -39,15 +53,29 @@ Widget userNameTextFieldWidget() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<SignUpController>(
-      id: 'username',
+      id: 'validation',
       builder: (controller) {
-        return commonTextField(
-          controller: controller.username,
-          //validator: controller.userNameCondition,
-          hintTextString: StringRes.usernameString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: false,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            commonTextField(
+              controller: controller.username,
+              //validator: controller.userNameCondition,
+              hintTextString: StringRes.usernameString,
+              width: w * 0.893,
+              height: h * 0.067,
+              obscureText: false,
+            ),
+            sizedBoxWidget(
+              height: Get.height*0.01,
+            ),
+            controller.userError != null
+                ? commonTextWidget(
+                text: controller.userError ?? "",
+                color: ColorRes.errorColor)
+                : sizedBoxWidget(),
+          ],
         );
       });
 }
@@ -59,20 +87,24 @@ Widget signUpEmailTextFieldWidget() {
       id: 'validation',
       builder: (controller) {
         return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             commonTextField(
               controller: controller.signupEmail,
-              //validator: controller.signupEmailCondition,
               hintTextString: StringRes.emailString,
               width: w * 0.893,
               height: h * 0.067,
               obscureText: false,
               // onChanged: controller.signup,
             ),
-            controller.emailerror != null
+            sizedBoxWidget(
+              height: Get.height*0.01,
+            ),
+            controller.emailError != null
                 ? commonTextWidget(
-                    text: controller.emailerror ?? "",
-                    color: ColorRes.whiteColor)
+                    text: controller.emailError ?? "",
+                    color: ColorRes.errorColor)
                 : sizedBoxWidget(),
           ],
         );
@@ -83,25 +115,40 @@ Widget signUpPassTextFieldWidget() {
   double h = Get.height;
   double w = Get.width;
   return GetBuilder<SignUpController>(
-      id: 'validation',
-      builder: (controller) {
-        return commonTextField(
-          controller: controller.signupPassword,
-          //validator: controller.signupPassWordCondition,
-          suffixIcon: iconWidget(
-              onPressed: controller.forGetPassSuFix,
-              icon: Icon(
-                controller.signupVisiBal
-                    ? IconRes.visiBalOffIcon
-                    : IconRes.visiBalIcon,
-                color: ColorRes.whiteColor,
-              )),
-          hintTextString: StringRes.passWordString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: controller.signupVisiBal ? true : false,
-        );
-      });
+    id: 'validation',
+    builder: (controller) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          commonTextField(
+            controller: controller.signupPassword,
+            //validator: controller.signupPassWordCondition,
+            suffixIcon: iconWidget(
+                onPressed: controller.forGetPassSuFix,
+                icon: Icon(
+                  controller.signupVisiBal
+                      ? IconRes.visiBalOffIcon
+                      : IconRes.visiBalIcon,
+                  color: ColorRes.whiteColor,
+                )),
+            hintTextString: StringRes.passWordString,
+            width: w * 0.893,
+            height: h * 0.067,
+            obscureText: controller.signupVisiBal ? true : false,
+          ),
+          sizedBoxWidget(
+            height: Get.height*0.01,
+          ),
+          controller.passError != null
+              ? commonTextWidget(
+              text: controller.passError ?? "",
+              color: ColorRes.errorColor)
+              : sizedBoxWidget(),
+        ],
+      );
+    },
+  );
 }
 
 Widget chkBox(

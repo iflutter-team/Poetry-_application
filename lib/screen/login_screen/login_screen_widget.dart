@@ -114,7 +114,7 @@ Widget account() {
             fontSize: 14,
             fontWeight: FontWeight.w400),
         TextButton(
-            onPressed: controller.account,
+            onPressed:()=> controller.account(),
             child: commonTextWidget(
                 text: StringRes.signUpString,
                 color: Colors.white54,

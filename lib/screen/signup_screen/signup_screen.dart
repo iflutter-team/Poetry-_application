@@ -10,11 +10,10 @@ import '../../common/sizedbox_widget.dart';
 import '../../common/text_widget.dart';
 import '../../utils/string_res.dart';
 
-// ignore: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
-  double h = Get.height;
-  double w = Get.width;
+  final  double h = Get.height;
+ final double w = Get.width;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +63,9 @@ class SignUpScreen extends StatelessWidget {
                     height: h * 0.033,
                   ),
                   signupButton(),
+                  sizedBoxWidget(
+                    height: h * 0.043,
+                  ),
                 ],
               ),
             ),
