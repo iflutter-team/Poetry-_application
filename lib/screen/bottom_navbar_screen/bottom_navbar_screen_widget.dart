@@ -12,10 +12,9 @@ import 'bottom_navbar_screen_controller.dart';
 
 
 // int index = 0;
-
+double h = Get.height;
+double w = Get.width;
 Widget bottomNavBar() {
-  double h = Get.height;
-  double w = Get.width;
   return GetBuilder<BottomNavBarController>(
       id: "navigationBar",
       builder: (controller) {
@@ -149,14 +148,14 @@ class CustomPainterWidget extends CustomPainter {
       ..color = Colors.white
       ..style = PaintingStyle.fill;
     Path path = Path()..moveTo(0, 0);
-    path.quadraticBezierTo(size.width * 0.20, 0, size.width * 0.35, 0);
-    path.quadraticBezierTo(size.width * 0.40, 0, size.width * 0.40, 20);
-    path.arcToPoint(Offset(size.width * 0.60, 20),
+    path.quadraticBezierTo(w * 0.20, 0, w * 0.35, 0);
+    path.quadraticBezierTo(w * 0.40, 0, w * 0.40, 20);
+    path.arcToPoint(Offset(w * 0.60, 20),
         radius: Radius.circular(10), clockwise: false);
-    path.quadraticBezierTo(size.width * 0.60, 0, size.width * 0.65, 0);
-    path.quadraticBezierTo(size.width * 0.80, 0, size.width, 0);
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
+    path.quadraticBezierTo(w * 0.60, 0, w * 0.65, 0);
+    path.quadraticBezierTo(w * 0.80, 0, w, 0);
+    path.lineTo(w, h);
+    path.lineTo(0, h);
     path.close();
     canvas.drawShadow(path, Colors.black, 5, true);
     canvas.drawPath(path, paint);

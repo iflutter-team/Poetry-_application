@@ -7,7 +7,6 @@ import 'package:poetry/screen/bottom_navbar_screen/bottom_navbar_screen.dart';
 import 'package:poetry/screen/follow_screen/follow_screen.dart';
 import 'package:poetry/screen/home_screen/home_screen.dart';
 import 'package:poetry/screen/introduction_screen/introduction_screen.dart';
-import 'package:poetry/screen/login_screen/login_screen.dart';
 import 'package:poetry/screen/poem/poem_screen.dart';
 import 'package:poetry/screen/profile_screen/profile_screen.dart';
 import 'package:poetry/screen/splash_screen/splash_screen.dart';
