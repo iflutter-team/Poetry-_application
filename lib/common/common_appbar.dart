@@ -9,7 +9,7 @@ import 'common_icon.dart';
 PreferredSizeWidget commonAppbar(BuildContext context,
     {Color? backgroundColor,
     Color? foregroundColor,
-      required void Function()? onTap,
+       void Function()? onTap,
     IconData? icon,
     Color? color,
     required String title,

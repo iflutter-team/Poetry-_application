@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
     Get.put(LoginController());
     return GetBuilder<LoginController>(builder: (controller) {
       return Scaffold(
-        key: controller.scaffoldKey,
+        //key: controller.scaffoldKey,
         backgroundColor: ColorRes.greenColor,
         body: paddingWidget(
           left: w * 0.015,
@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
             child: Container(
               alignment: Alignment.center,
               child: Form(
-                key: controller.loginKey,
+               // key: controller.loginKey,
                 child: Column(
                   children: [
                     Row(

@@ -20,6 +20,7 @@ class EditProfile extends StatelessWidget {
         color: ColorRes.greenColor,
         backgroundColor: ColorRes.whiteColor,
         context,
+        onTapBack: () => Get.back(),
         title: StringRes.profileTitle,
         leadingIcon: Icons.arrow_back_sharp,
         actionIcon: Icons.favorite, onTap: () { Get.back(); },

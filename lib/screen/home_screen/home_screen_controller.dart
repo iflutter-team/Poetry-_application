@@ -20,7 +20,7 @@ class HomeScreenController extends GetxController {
     update(['switch']);
   }
 
-  void menuContainer() {
+  void shutter() {
     selected = !selected;
     update(['animatedContainer']);
   }

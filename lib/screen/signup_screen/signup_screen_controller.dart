@@ -147,6 +147,9 @@ class SignUpController extends GetxController {
         termsConditionsAgreedCheckbox = false;
 
       }
+      else{
+        Get.snackbar('SignUp Error', 'Please Select Tearms and Conditions');
+      }
     }
     else{
       Get.snackbar('signup fail', 'Enter valid User');

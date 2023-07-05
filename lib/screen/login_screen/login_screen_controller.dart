@@ -8,8 +8,8 @@ import '../../common/termscondition.dart';
 import '../bottom_navbar_screen/bottom_navbar_screen.dart';
 
 class LoginController extends GetxController {
-  GlobalKey<FormState> loginKey = GlobalKey<FormState>();
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  // GlobalKey<FormState> loginKey = GlobalKey<FormState>();
+  // GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool visiBal = true;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -29,22 +29,30 @@ class LoginController extends GetxController {
     // });
   }
 
-  String? emailCondition(val) {
-    update(['email']);
-    bool emailValid = RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(val!);
+  String? emailLoginError;
 
-    return emailValid ? null : 'Please Enter Valid Email Address';
+  String? emailCondition(String? value) {
+    if (value == null || value.isEmpty) {
+      emailLoginError = "Enter Email";
+    } else if (!GetUtils.isEmail(value)) {
+      emailLoginError = "Enter Valid Email";
+    } else {
+      emailLoginError = null;
+    }
+    update(['email']);
   }
 
-  String? passWordCondition(val) {
+  String? passLoginError;
+
+  String? passWordCondition(String? value) {
     // update(['password']);
-    bool passValid =
-    RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)").hasMatch(val!);
-    return passValid
-        ? null
-        : 'contain atLeast one Capital Letter, Small Letters, Numbers & a special character ';
+    if (value!.length <= 6) {
+      return passLoginError = "Enter Password Must be six Letter";
+    } else {
+      passLoginError = null;
+    }
+    update(['password']);
+    // return null;
   }
 
   void passSuFix() {
@@ -59,7 +67,9 @@ class LoginController extends GetxController {
   //var screenIndex = 'loginScreen';
   Future<void> loginButton() async {
     print('login click');
-    if (loginKey.currentState!.validate()) {
+    emailCondition(email.text);
+    passWordCondition(password.text);
+    if (emailLoginError == null && passLoginError == null) {
       var data = await database.ref('Person').once();
       Map temp = data.snapshot.value as Map;
       userdata.clear();
@@ -68,17 +78,17 @@ class LoginController extends GetxController {
       });
       print(userdata);
       userdata.forEach((element) async {
-        if (element['Email']==email.text && element['Password']==password.text) {
+        if (element['Email'] == email.text &&
+            element['Password'] == password.text) {
           // await termsAndConditionDialog(
           // acceptOnPressed: () => Get.offAll(const BottomNavBarSrceen()),
           // declineOnPressed: () {
-             Get.off(()=>const BottomNavBarSrceen());
+          Get.off(() => const BottomNavBarSrceen());
           // });
           email.clear();
           password.clear();
-        }
-        else{
-         // Get.snackbar("Login Failed", "Enter valid UserName or Password");
+        } else {
+          // Get.snackbar("Login Failed", "Enter valid UserName or Password");
         }
       });
     } else {
@@ -89,7 +99,7 @@ class LoginController extends GetxController {
   }
 
   void account() {
-    Get.to(()=>SignUpScreen());
+    Get.to(() => SignUpScreen());
   }
 
   void backArrow() {

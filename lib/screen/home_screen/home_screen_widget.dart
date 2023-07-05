@@ -29,7 +29,7 @@ AppBar appBarWidget() {
         id: 'animatedContainer',
         builder: (controller) {
           return InkWell(
-            onTap: controller.menuContainer,
+            onTap: controller.shutter,
             child: paddingWidget(
                 left: w * 0.05,
                 bottom: h * 0.0,
@@ -119,7 +119,7 @@ Widget popularCategoriesRow() {
 Widget popularCategoriesList(BuildContext context) {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
-      height: h * 0.700,
+      height: h * 0.730,
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: GridView.builder(
@@ -257,7 +257,7 @@ Widget famousBookRow() {
 Widget famousBookList(BuildContext context) {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return sizedBoxWidget(
-      height: h * 0.700,
+      height: h * 0.730,
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: GridView.builder(

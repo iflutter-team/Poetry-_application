@@ -14,7 +14,7 @@ double h = Get.height;
 
 AppBar appbarProfile(
     {required void Function()? actionIconOnPressed,
-    required Widget actionIcon}) {
+    required Widget actionIcon,void Function()? onTapLeading}) {
   return AppBar(
     centerTitle: true,
     backgroundColor: ColorRes.whiteColor,
@@ -24,13 +24,19 @@ AppBar appbarProfile(
         fontSize: 20,
         fontWeight: FontWeight.bold,
         text: StringRes.profileTitle),
-    leading: paddingWidget(
-      left: w * 0.05,
-      bottom: h * 0.0,
-      right: w * 0.0,
-      top: h * 0.0,
-      widget: Image.asset(AssetRes.homeAppBarMenuImg),
-    ),
+    leading: GetBuilder<ProfileScreenController>(
+        id: 'animatedContainer',
+        builder: (controller) {
+          return InkWell(
+            onTap: controller.shutter,
+            child: paddingWidget(
+                left: w * 0.05,
+                bottom: h * 0.0,
+                right: w * 0.0,
+                top: h * 0.0,
+                widget: Image.asset(AssetRes.homeAppBarMenuImg)),
+          );
+        }),
     actions: [
       IconButton(
         onPressed: actionIconOnPressed,
@@ -158,4 +164,21 @@ Widget commonDisableTextFieldProfile({bool? enabled,void Function()? onTap,TextE
         ),
         onTap: onTap,
       ));
+}
+
+Widget containerConditionProfile() {
+  return GetBuilder<ProfileScreenController>(
+      id: "animatedContainer",
+      builder: (controller) {
+        return GestureDetector(
+          onTap: controller.gestureDetectorCondition,
+          child: controller.selected
+              ? Container(
+            color: const Color(0xff0F3E1A).withOpacity(0.8),
+            height: double.infinity,
+            width: double.infinity,
+          )
+              : const SizedBox(),
+        );
+      });
 }

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:poetry/utils/color_res.dart';
 
 double h = Get.height;
 double w = Get.width;
@@ -9,7 +8,7 @@ double w = Get.width;
 Widget autherList() {
   return Expanded(
     child: GridView.builder(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: h * 0.05,
@@ -20,11 +19,30 @@ Widget autherList() {
           height: 200,
           width: 200,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white.withOpacity(0.8),
-              image: DecorationImage(
-                  image: AssetImage(
-                      'Nikhileswar-Sahitya-Akdemi-ProfilePic-removebg-preview.png'),),),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white70,
+                 offset: Offset(0, 5),
+                blurRadius: 20.0,
+              )
+            ],
+            borderRadius: BorderRadius.circular(10),
+            //color: Colors.white.withOpacity(0.8),
+            image: const DecorationImage(
+              alignment: Alignment.bottomCenter,
+              image: AssetImage(
+                  'assets/image/Nikhileswar-Sahitya-Akdemi-ProfilePic-removebg-preview.png'),
+            ),
+          ),
+          child: const Stack(children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Nikhileshwar',
+                style: TextStyle(color: (ColorRes.greenColor), fontSize: 17),
+              ),
+            )
+          ]),
         );
       },
     ),

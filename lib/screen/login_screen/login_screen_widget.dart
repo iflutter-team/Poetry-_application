@@ -7,6 +7,7 @@ import 'package:poetry/common/textfield_widget.dart';
 import 'package:poetry/screen/login_screen/login_screen_controller.dart';
 import 'package:poetry/utils/color_res.dart';
 
+import '../../common/sizedbox_widget.dart';
 import '../../common/text_widget.dart';
 import '../../utils/icon_res.dart';
 import '../../utils/string_res.dart';
@@ -23,13 +24,27 @@ Widget emailTextFieldWidget() {
   return GetBuilder<LoginController>(
       id: 'email',
       builder: (controller) {
-        return commonTextField(
-          controller: controller.email,
-          validator: controller.emailCondition,
-          hintTextString: StringRes.emailString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: false,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            commonTextField(
+              controller: controller.email,
+              // validator: controller.emailCondition,
+              hintTextString: StringRes.emailString,
+              width: w * 0.893,
+              height: h * 0.067,
+              obscureText: false,
+            ),
+            sizedBoxWidget(
+              height: Get.height*0.01,
+            ),
+            controller.emailLoginError != null
+                ? commonTextWidget(
+                text: controller.emailLoginError ?? "",
+                color: ColorRes.errorColor)
+                : sizedBoxWidget(),
+          ],
         );
       });
 }
@@ -40,21 +55,35 @@ Widget passTextFieldWidget() {
   return GetBuilder<LoginController>(
       id: 'password',
       builder: (controller) {
-        return commonTextField(
-          controller: controller.password,
-          validator: controller.passWordCondition,
-          suffixIcon: iconWidget(
-              onPressed: controller.passSuFix,
-              icon: Icon(
-                controller.visiBal
-                    ? IconRes.visiBalOffIcon
-                    : IconRes.visiBalIcon,
-                color: ColorRes.whiteColor,
-              )),
-          hintTextString: StringRes.passWordString,
-          width: w * 0.893,
-          height: h * 0.067,
-          obscureText: controller.visiBal ? true : false,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            commonTextField(
+              controller: controller.password,
+              // validator: controller.passWordCondition,
+              suffixIcon: iconWidget(
+                  onPressed: controller.passSuFix,
+                  icon: Icon(
+                    controller.visiBal
+                        ? IconRes.visiBalOffIcon
+                        : IconRes.visiBalIcon,
+                    color: ColorRes.whiteColor,
+                  )),
+              hintTextString: StringRes.passWordString,
+              width: w * 0.893,
+              height: h * 0.067,
+              obscureText: controller.visiBal ? true : false,
+            ),
+            sizedBoxWidget(
+              height: Get.height*0.01,
+            ),
+            controller.passLoginError != null
+                ? commonTextWidget(
+                text: controller.passLoginError ?? "",
+                color: ColorRes.errorColor)
+                : sizedBoxWidget(),
+          ],
         );
       });
 }

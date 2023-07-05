@@ -30,7 +30,7 @@ Widget bottomNavBar() {
               left: 0,
               child: SizedBox(
                 width: w,
-                height: h * 0.080,
+                height: h * 0.090,
                 child: Stack(
                   children: [
                     CustomPaint(
@@ -147,13 +147,13 @@ class CustomPainterWidget extends CustomPainter {
     Paint paint = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill;
-    Path path = Path()..moveTo(0, 0);
+    Path path = Path()..moveTo(0, 10);
     path.quadraticBezierTo(w * 0.20, 0, w * 0.35, 0);
     path.quadraticBezierTo(w * 0.40, 0, w * 0.40, 20);
     path.arcToPoint(Offset(w * 0.60, 20),
         radius: Radius.circular(10), clockwise: false);
     path.quadraticBezierTo(w * 0.60, 0, w * 0.65, 0);
-    path.quadraticBezierTo(w * 0.80, 0, w, 0);
+    path.quadraticBezierTo(w * 0.80, 0, w, 10);
     path.lineTo(w, h);
     path.lineTo(0, h);
     path.close();
