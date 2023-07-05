@@ -6,9 +6,9 @@ class HttpService{
         Map<String, dynamic>? body,
         required Map<String, String>? header}) async {
     try {
-      print("url=============>$url");
-      print("url=============>$header");
-      print("url=============>$body");
+      // print("url=============>$url");
+      // print("url=============>$header");
+      // print("url=============>$body");
       return await http.post(Uri.parse(url),
           body: jsonEncode(body), headers: header);
     } catch (e) {

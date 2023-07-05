@@ -1,4 +1,5 @@
 import 'asset_res.dart';
+import 'icon_res.dart';
 
 class StringRes {
   ///--------------introductionScreen------------------///
@@ -204,6 +205,7 @@ class StringRes {
   static const followsText = "45M Followers";
   static const followText = "Follow";
   static const unFollowText = "UnFollow";
+  static const topBookText = "Top Book";
 
   static const List<Map> followList = [
     {
@@ -229,6 +231,34 @@ class StringRes {
     },
     {
       'image': AssetRes.pabloNeruda1Image,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
+      'title': StringRes.poem,
+      'subtitle': StringRes.followsText,
+      'downloadImg': AssetRes.downloadImage,
+      'icon': IconRes.moreIcon,
+    },
+    {
+      'image': AssetRes.timeIsMotherImage,
       'title': StringRes.poem,
       'subtitle': StringRes.followsText,
       'downloadImg': AssetRes.downloadImage,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 import 'package:poetry/screen/signup_screen/signup_api.dart';
 import 'package:poetry/services/firebase_services.dart';
 
@@ -115,19 +116,18 @@ class SignUpController extends GetxController {
     signupEmailCondition(signupEmail.text);
     userNameCondition(username.text);
     signupPassCondition(signupPassword.text);
-  //userSignUp();
     if(fullError==null && emailError==null && userError==null && passError==null ){
       // await termsAndConditionDialog(acceptOnPressed: (){
       //   print("i accept terms and condition");
       //   termsConditionsAgreedCheckbox = true;
       //   print(termsConditionsAgreedCheckbox);
-      //   update(['chkBoxCondition', 'checked']);
+      //   update(['validation']);
       //   Get.back();
       // }, declineOnPressed: (){
       //   print("i decline terms and condition");
       //   termsConditionsAgreedCheckbox = false;
       //   print(termsConditionsAgreedCheckbox);
-      //   update(['chkBoxCondition', 'checked']);
+      //   update(['validation']);
       //   Get.back();
       // });
       if (termsConditionsAgreedCheckbox == true) {
@@ -138,6 +138,7 @@ class SignUpController extends GetxController {
           'Email': signupEmail.text,
           'Password': signupPassword.text
         });
+       userSignUp();
         Get.back();
         fullName.clear();
         username.clear();
@@ -175,6 +176,8 @@ class SignUpController extends GetxController {
       Get.back();
     });
   }
+
+  RegisterModel? register;
   Future userSignUp() async {
     Map<String, dynamic> body = {
       "fullname": fullName.text.trim(),
@@ -182,10 +185,9 @@ class SignUpController extends GetxController {
       "email": signupEmail.text.trim(),
       "password": signupPassword.text.trim(),
     };
-    RegisterModel? getPostData;
-    getPostData = await SignupApi.registerUser(body: body);
-    // if(getPostData!=null && getPostData!.status == 1){
-    //   Get.off(()=>LoginPage());
-    // }
+    register=await SignupApi.registerUser( body);
+    if(register!=null && register!.status == 0){
+      Get.back();
+    }
   }
 }
