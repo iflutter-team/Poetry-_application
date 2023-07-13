@@ -21,6 +21,5 @@ class IntroductionScreenController extends GetxController {
   void pageViewOfIntroductionScreen(int value){
     update(['pageView','indicator','container']);
     pageIndex = value;
-
   }
 }

@@ -17,6 +17,13 @@ class LoginController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+    // loginButton();
+    // email.clear();
+    // password.clear();
+    //
+    // termsAndConditionDialog(acceptOnPressed: () {
+    //   Get.offAll(const BottomNavBarSrceen());
+    // });
   }
 
   String? emailLoginError;
@@ -54,6 +61,7 @@ class LoginController extends GetxController {
     Get.to(const ForGetPassWord());
   }
 
+  //var screenIndex = 'loginScreen';
   Future<void> loginButton() async {
     print('login click');
     emailCondition(email.text);

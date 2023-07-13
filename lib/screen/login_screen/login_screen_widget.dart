@@ -127,7 +127,7 @@ Widget loginButton() {
             //         backgroundColor: Colors.white30);
             //   }
             // },
-            onPressed: controller.loginButton,
+            onPressed:()=> controller.loginButton(),
             buttonText: StringRes.loginString);
       });
 }

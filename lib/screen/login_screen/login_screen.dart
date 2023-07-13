@@ -9,8 +9,6 @@ import 'package:poetry/utils/color_res.dart';
 
 import '../../common/poetry_image.dart';
 import '../../utils/string_res.dart';
-
-// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
 

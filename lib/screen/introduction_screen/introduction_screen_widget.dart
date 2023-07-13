@@ -9,7 +9,8 @@ import '../../utils/color_res.dart';
 import '../../utils/string_res.dart';
 import '../login_screen/login_screen.dart';
 import 'introduction_screen_controller.dart';
-
+double h=Get.height;
+double w=Get.width;
 
 Widget containerOfPageView({double? height, Widget? widget}) {
   return SizedBox(
@@ -94,8 +95,6 @@ Widget introductionPageBottomButton(
 }
 
 Widget row(){
-  double h=Get.height;
-  double w=Get.width;
   return  GetBuilder<IntroductionScreenController>(
       id: "indicator",
       builder: (controller) {
@@ -154,7 +153,6 @@ Widget row(){
 }
 
 Widget introduction(){
-  double h = Get.height;
   return GetBuilder<IntroductionScreenController>(
       id: 'pageView',
       builder: (controller) {
