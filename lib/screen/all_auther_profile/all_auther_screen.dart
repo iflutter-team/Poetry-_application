@@ -14,7 +14,6 @@ class AllAutherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = Get.width;
-    double h = Get.height;
     Get.put(AutherScreen());
     return Scaffold(
       backgroundColor: ColorRes.greenColor,

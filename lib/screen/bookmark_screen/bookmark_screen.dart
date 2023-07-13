@@ -24,7 +24,7 @@ class BookmarkScreen extends StatelessWidget {
           title: StringRes.bookmark,
           leadingIcon: Icons.arrow_back_sharp,
           onTapBack:()=>Get.find<BottomNavBarController>().onTapBack(),
-          actionIcon: Icons.favorite, onTap: ()=>Get.back(),
+          actionIcon: Icons.favorite,
         ),
         body: Column(
           children: [

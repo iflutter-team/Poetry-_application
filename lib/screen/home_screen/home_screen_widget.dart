@@ -318,7 +318,7 @@ Widget famousBookList(BuildContext context) {
   });
 }
 
-Widget AutherYouMostLikeRow() {
+Widget autherYouMostLikeRow() {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return commonRow(
       text: StringRes.autherList,
@@ -672,12 +672,12 @@ Widget animatedContainer(BuildContext context) {
       });
 }
 
-Widget ListOfAuther() {
+Widget listOfAuther() {
   return SizedBox(
     height: h * 0.1739,
     width: w * 0.9926,
     child: ListView.builder(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemCount: 10,
       itemBuilder: (BuildContext context, int index) {
@@ -690,7 +690,7 @@ Widget ListOfAuther() {
                   child: Container(
                     width: 150,
                     height: 150,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -700,8 +700,8 @@ Widget ListOfAuther() {
                     ),
                   ),
                 ),
-                SizedBox(height: 5,),
-                Text(
+                const SizedBox(height: 5,),
+                const Text(
                   'Nikhileshwar',
                   style: TextStyle(
                       fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),

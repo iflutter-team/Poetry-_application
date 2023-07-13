@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 import 'package:poetry/screen/signup_screen/signup_api.dart';
-import 'package:poetry/services/firebase_services.dart';
 
 import '../../common/termscondition.dart';
 import '../../model/register_model.dart';
-import '../login_screen/login_screen.dart';
 
 class SignUpController extends GetxController {
   bool signupVisiBal = true;
@@ -46,6 +43,7 @@ class SignUpController extends GetxController {
       fullError=null;
     }
     update(['validation']);
+    return null;
 
   }
   String? userError;
@@ -61,26 +59,9 @@ class SignUpController extends GetxController {
       userError=null;
     }
     update(['validation']);
+    return null;
   }
 
-  // String? signupEmailCondition(val) {
-  //   update(['email']);
-  //   bool emailValid = RegExp(
-  //           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-  //       .hasMatch(val!);
-  //
-  //   return emailValid ? null : 'Please Enter Valid Email Address';
-  // }
-
-
-  // String? signupPassWordCondition(val) {
-  //   // update(['password']);
-  //   bool passValid =
-  //       RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)").hasMatch(val!);
-  //   return passValid
-  //       ? null
-  //       : 'contain atLeast one Capital Letter, Small Letters, Numbers & a special character ';
-  // }
   String? emailError;
   void signupEmailCondition(String? value){
     if(value==null||value.isEmpty){
@@ -94,19 +75,13 @@ class SignUpController extends GetxController {
   }
   String? passError;
   String? signupPassCondition(String? value){
-    // if(value==null||value.isEmpty){
-    //   passError="Enter Password";
-    // }else if(!GetUtils.isAlphabetOnly(value)){
-    //   passError="Enter Valid Password";
-    // }else{
-    //   passError=null;
-    // }
     if(value!.length<=6){
       return passError="Enter Password Must be six Letter";
     }else{
       passError=null;
     }
     update(['validation']);
+    return null;
    // return null;
   }
 
@@ -116,6 +91,7 @@ class SignUpController extends GetxController {
     signupEmailCondition(signupEmail.text);
     userNameCondition(username.text);
     signupPassCondition(signupPassword.text);
+
     if(fullError==null && emailError==null && userError==null && passError==null ){
       // await termsAndConditionDialog(acceptOnPressed: (){
       //   print("i accept terms and condition");
@@ -130,26 +106,26 @@ class SignUpController extends GetxController {
       //   update(['validation']);
       //   Get.back();
       // });
-      if (termsConditionsAgreedCheckbox == true) {
-        //print(termsConditionsAgreedCheckbox);
-       await FirebaseServices.addData('Person', {
-          'FullName': fullName.text,
-          'username': username.text,
-          'Email': signupEmail.text,
-          'Password': signupPassword.text
-        });
-       userSignUp();
+      userSignUp();
+      // if (termsConditionsAgreedCheckbox == true) {
+      //   //print(termsConditionsAgreedCheckbox);
+      //  // await FirebaseServices.addData('Person', {
+      //  //    'FullName': fullName.text,
+      //  //    'username': username.text,
+      //  //    'Email': signupEmail.text,
+      //  //    'Password': signupPassword.text
+      //  //  });
         Get.back();
-        fullName.clear();
-        username.clear();
-        signupEmail.clear();
-        signupPassword.clear();
-        termsConditionsAgreedCheckbox = false;
+      //   fullName.clear();
+      //   username.clear();
+      //   signupEmail.clear();
+      //   signupPassword.clear();
+      //   termsConditionsAgreedCheckbox = false;
+      //
+      // } else{
+      //   Get.snackbar('SignUp Error', 'Please Select Teams and Conditions');
+      // }
 
-      }
-      else{
-        Get.snackbar('SignUp Error', 'Please Select Tearms and Conditions');
-      }
     }
     else{
       Get.snackbar('signup fail', 'Enter valid User');
@@ -188,8 +164,8 @@ class SignUpController extends GetxController {
       "email": signupEmail.text.trim(),
       "password": signupPassword.text.trim(),
     };
-    register=await SignupApi.registerUser( body);
-    if(register!=null && register!.status == 0){
+    register=await SignupApi.registerUser(body);
+    if(register!=null && register!.status == 1){
       Get.back();
     }
   }

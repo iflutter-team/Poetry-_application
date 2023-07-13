@@ -19,7 +19,7 @@ Widget autherList() {
           height: 200,
           width: 200,
           decoration: BoxDecoration(
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.white70,
                  offset: Offset(0, 5),

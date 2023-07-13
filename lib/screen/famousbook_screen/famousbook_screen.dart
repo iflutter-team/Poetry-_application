@@ -10,7 +10,7 @@ import '../bookmark_screen/bookmark_screen_widget.dart';
 import 'famousbook_screen_widget.dart';
 
 class FamousBook extends StatelessWidget {
-  FamousBook({Key? key}) : super(key: key);
+  const FamousBook({Key? key}) : super(key: key);
 
 
   @override

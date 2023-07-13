@@ -20,7 +20,7 @@ Widget commonRow(
                 fontWeight: FontWeight.bold,
                 color: ColorRes.whiteColor),
           ),
-          Spacer(),
+          const Spacer(),
           TextButton(
             onPressed: onPressedView,
             child: commonTextWidget(

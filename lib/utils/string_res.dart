@@ -21,6 +21,8 @@ class StringRes {
   ///--------------signUpScreen----------------------///
   static const signUpString = "Sign Up";
   static const fullNameString = "Full Name";
+  static const genderString = "Gender";
+  static const bofDateString = "dob";
   static const usernameString = "User Name";
   static const agreedString = "Agreed To";
   static const termsAndConditionString = "Terms & Conditions";

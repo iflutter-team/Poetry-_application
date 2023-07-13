@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poetry/screen/login_screen/login_screen.dart';
 
+import '../../model/forgotpassword_model.dart';
+import 'forgetpassword_api.dart';
+
 class ForGetController extends GetxController {
   bool forGetVisiBal = true;
   bool forGetNewVisiBal = true;
@@ -28,6 +31,18 @@ class ForGetController extends GetxController {
         : 'contain atLeast one Capital Letter, Small Letters, Numbers & a special character ';
   }
 
+  ForgotPasswordModel? forgotPasswordData;
+  Future<void> forgotPassword() async {
+    Map<String, dynamic> body = {
+      "email": forgetEmail.text.trim(),
+    };
+
+    forgotPasswordData=await ForgotPasswordApi.forgotPassword(body);
+    if(forgotPasswordData!=null && forgotPasswordData!.status == 200){
+      Get.to(LoginScreen());
+    }
+  }
+
   void forGetPassSuFix() {
     forGetVisiBal = !forGetVisiBal;
     update(['forGetPassword']);
@@ -39,10 +54,14 @@ class ForGetController extends GetxController {
   }
 
   void confirmButton() {
+    forgotPassword();
     Get.to(LoginScreen());
   }
 
   void forGetBackArrow() {
     Get.back();
+    forgetEmail.clear();
+    forgetPassword.clear();
+    createNewPassword.clear();
   }
 }

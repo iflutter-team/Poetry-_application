@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:poetry/screen/follow_screen/follow_screen_controller.dart';
 import '../../common/iconbutton_widget.dart';
 import '../../common/text_widget.dart';

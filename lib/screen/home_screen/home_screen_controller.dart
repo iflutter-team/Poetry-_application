@@ -44,7 +44,7 @@ class HomeScreenController extends GetxController {
   }
 
   void famousBookCondition(){
-    Get.to(FamousBook());
+    Get.to(const FamousBook());
   }
 
   void gestureDetectorCondition(){

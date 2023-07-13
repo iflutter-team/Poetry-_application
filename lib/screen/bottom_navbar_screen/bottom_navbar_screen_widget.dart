@@ -151,7 +151,7 @@ class CustomPainterWidget extends CustomPainter {
     path.quadraticBezierTo(w * 0.20, 0, w * 0.35, 0);
     path.quadraticBezierTo(w * 0.40, 0, w * 0.40, 20);
     path.arcToPoint(Offset(w * 0.60, 20),
-        radius: Radius.circular(10), clockwise: false);
+        radius: const Radius.circular(10), clockwise: false);
     path.quadraticBezierTo(w * 0.60, 0, w * 0.65, 0);
     path.quadraticBezierTo(w * 0.80, 0, w, 10);
     path.lineTo(w, h);

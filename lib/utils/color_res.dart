@@ -24,8 +24,8 @@ class ColorRes {
   static Color formStringColor = Colors.white.withOpacity(0.9);
 
   ///------------------profile-------------------///
-  static const pageviewOrangeColor = Colors.orange;
+  static const pageViewOrangeColor = Colors.orange;
 
   ///------------------bookmark-------------///
-  static const bookmarkColor=Color(0xff0f5d768);
+  static const bookmarkColor=Color(0xFFF5D768);
 }
