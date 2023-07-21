@@ -35,9 +35,13 @@ class ProfileScreen extends StatelessWidget {
                   id: 'imagePickerProfileScreen',
                   builder: (controller) {
                     return profileView(
-                        backgroundImage: (controller.file == null)
-                            ? AssetImage(AssetRes.irianaProfileImage)
-                            : FileImage(controller.file!) as ImageProvider);
+                        backgroundImage:controller.file != null? FileImage(controller.file!):null
+
+
+                        // (controller.file == null)
+                        //     ? const AssetImage(AssetRes.irianaProfileImage)
+                        //     :
+                    );
                   }),
               profileDataField(),
             ],

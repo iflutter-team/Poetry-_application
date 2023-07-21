@@ -19,7 +19,7 @@ class PrefService {
     } else if (value is List<String>) {
       await _prefs?.setStringList(key, value);
     } else {
-      Get.snackbar("Pref Error", "Send valide Value for Store data in pref");
+      Get.snackbar("Pref Error", "Send valid Value for Store data in pref");
     }
   }
 

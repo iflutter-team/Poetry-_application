@@ -17,6 +17,11 @@ class StringRes {
   static const forgetPassString = "Forget password";
   static const confirmPassWordString = "Confirm";
   static const createNewPassword = "Create New Password";
+    static const emailForgetString = "Enter Email OR Phone";
+    static const forgetHeaderString = "Forget Password";
+    static const enterOTP = "Enter OTP";
+    static const getOTP = "Get OTP";
+    static const submitOTP = "Submit OTP";
 
   ///--------------signUpScreen----------------------///
   static const signUpString = "Sign Up";

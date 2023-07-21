@@ -2,8 +2,10 @@ import 'package:get/get.dart';
 import 'package:poetry/screen/famousbook_screen/famousbook_screen.dart';
 import 'package:poetry/screen/view_screen/view_screen.dart';
 
+import '../../model/slider_model.dart';
 import '../../utils/asset_res.dart';
 import '../all_auther_profile/all_auther_screen.dart';
+import 'home_screen_api.dart';
 
 class HomeScreenController extends GetxController {
   bool switchDemo = true;
@@ -14,7 +16,19 @@ class HomeScreenController extends GetxController {
   String english = "English";
   String hindi = "Hindi";
   String? gp = "English";
-
+@override
+  void onInit() {
+    // TODO: implement onInit
+  getSliderApi();
+  super.onInit();
+  }
+List<Datum> sliderApiList=[];
+  Future<void> getSliderApi() async {
+    sliderApiList=await
+    HomeScreenApi.getData();
+    update(['HomeScreenController']);
+    // print()
+  }
   void switchWidget(value) {
     switchDemo = value;
     update(['switch']);

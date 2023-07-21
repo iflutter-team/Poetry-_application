@@ -45,6 +45,7 @@ dependencies:
   firebase_storage: 11.2.4
   http: 0.13.6
   shared_preferences: 2.1.1
+  pinput: ^2.2.31
 
 
 dev_dependencies:

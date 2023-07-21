@@ -46,7 +46,7 @@ AppBar appbarProfile(
   );
 }
 
-Widget profileView({ImageProvider<Object>? backgroundImage,void Function()? InkwellonTap}) {
+Widget profileView({ImageProvider? backgroundImage,void Function()? InkwellonTap}) {
   return GetBuilder<ProfileScreenController>(
     id: 'imagePicker',
     builder: (controller) {
@@ -60,7 +60,7 @@ Widget profileView({ImageProvider<Object>? backgroundImage,void Function()? Inkw
                  // controller.imagePickerCondition,
                  child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: backgroundImage
+                  backgroundImage: backgroundImage??const AssetImage(AssetRes.irianaProfileImage)
                   // controller.file==null
                   // ?const AssetImage(AssetRes.irianaProfileImage):FileImage(controller.file!) as ImageProvider,
                  ),

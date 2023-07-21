@@ -63,8 +63,8 @@ AppBar appBarWidget() {
 Widget carouselSliderWidget() {
   return GetBuilder<HomeScreenController>(builder: (controller) {
     return CarouselSlider(
-        items: List.generate(data.length,
-            (index) => Image.asset(controller.carouselSliderdList[index])),
+        items: List.generate(controller.sliderApiList.length,
+            (index) => Image.asset(controller.sliderApiList![index].image.toString(),),),
         options: CarouselOptions(
             onPageChanged: controller.carouselSliderCondition,
             height: h * 0.250,

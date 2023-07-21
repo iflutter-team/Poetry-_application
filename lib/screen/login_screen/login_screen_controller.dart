@@ -6,6 +6,7 @@ import 'package:poetry/screen/signup_screen/signup_screen.dart';
 
 import '../../model/login_model.dart';
 import '../bottom_navbar_screen/bottom_navbar_screen.dart';
+import '../forgetpassword_screen/emailorphone_screen/emailorphone_screen.dart';
 import 'login_api.dart';
 
 class LoginController extends GetxController {
@@ -58,7 +59,7 @@ class LoginController extends GetxController {
   }
 
   void forGetPage() {
-    Get.to(const ForGetPassWord());
+    Get.to(const EmailOrPhone());
   }
 
   //var screenIndex = 'loginScreen';
@@ -98,6 +99,8 @@ class LoginController extends GetxController {
   }
 
   LoginModel? loginData;
+
+
   Future<void> userLogin() async {
     Map<String, dynamic> body = {
       "email": email.text.trim(),

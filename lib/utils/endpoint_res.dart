@@ -10,4 +10,5 @@ class EndPointRes {
   static const privacyPolicyEndPoint = "${baseUrl2}privacy_policy.php";
   static const emailCheckEndPoint = "${baseUrl2}email_check.php";
   static const userCheckEndPoint = "${baseUrl2}username_check.php";
+  static const sliderHomeScreenEndPoint = "${baseUrl2}slider.php";
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poetry/screen/profile_screen/profile_screen.dart';
 import 'package:poetry/screen/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
